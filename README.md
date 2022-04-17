@@ -6,10 +6,10 @@ project-mousssssaaaaaaa created by GitHub Classroom
 # Bucketlist
 
 ## Problem statement
-Personally I often find myself coming up with new ideas or projects I would like to pursue in the future.
+Personally I often find myself coming up with new ideas without following them up.
 Writing these ideas down in a bucket list helps keep track of these ideas. 
-The drawback of having a large static list, is it that it is only interesting when wanting to add new ideas to the bucket list. 
-This results in me and probably other people with a bucket list having a ever growing list of ideas in the background.
+But the drawback of having a large static list remains that it is only pops up in my mind when adding new ideas to the bucket list. 
+This results in me and probably other people with a bucket list having a ever growing list of ideas on there bucket list.
 
 ## Solution sketch
 ###### Summary
