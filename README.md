@@ -13,7 +13,7 @@ This results in me and probably other people with a bucket list having a ever gr
 
 ## Solution sketch
 ###### Summary
-This application will hopefully make the user more exicted to interact with his or her bucketlist. The user will receive new goals from time to time to be completed for reward choosen by the user. 
+This application will hopefully make the user more exicted to interact with his or her bucketlist. The user will receive new goals from time to time to be completed for a reward choosen by the user. 
 
 ###### Visual sketch
 1. The first view is the homepage which shows the current bucket list goals. The user can also add a new goal by pressing the top button. 
