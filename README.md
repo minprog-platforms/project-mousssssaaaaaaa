@@ -39,7 +39,6 @@ This IOS app also stores a static bucketlist for users. The benefits of this app
 This andriod app keeps it simple but offers some nice features. When completing a goal it will save the time and date to the achievements list. The app performs this by having the user check a box when completed which triggers a function to save the time and date of that action. This features has the benefit to make other features like analytics or incentives (e.g. double reward bonus) more feasible. 
 
 ###### Hardest parts 
-It might be difficult to balance the 'game' aspect of having goals that are challenging and reachable when the user decides the reward and the price. I also assume that the user would have to enter a lot of goals and items before the randomized generator will offer interesting options. 
-
+It might be difficult create a right loop of adding a goal to list which will then create a randomized task list. Another obstacle could be that the user would have to enter a lot of goals and items before the randomized generator will offer interesting options. I also assume that to balance the 'game' aspect of having goals that are challenging and reachable when the user decides the reward and the price.
 
 
