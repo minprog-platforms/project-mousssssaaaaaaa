@@ -1,8 +1,6 @@
 # proposal- Bucketlist - mousssssaaaaaaa
 project-mousssssaaaaaaa created by GitHub Classroom
 
-* Er was geen read.me of folder dus moet ik zelf een aanmaken?
-
 # Bucketlist
 
 ## Problem statement
