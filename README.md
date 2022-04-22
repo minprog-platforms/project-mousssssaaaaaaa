@@ -10,6 +10,8 @@ But the drawback of having a large static list remains that it is only pops up i
 This results in me and probably other people with a bucket list having a ever growing list of ideas on there bucket list.
 
 ## Solution sketch
+![Homescreen](/doc/homescreen.png)
+
 ###### Summary
 This application will hopefully make the user more exicted to interact with his or her bucketlist. The user will receive new goals from time to time to be completed for a reward choosen by the user. 
 
@@ -24,16 +26,17 @@ This application will hopefully make the user more exicted to interact with his 
 Because the bucket list and the shop items will be set by the users there won't be any external data required. Perhaps a good feature could be that a user can load in bucketlist items and shop items from external csv or excel file but this won't be crucial for the app.  
 
 ###### External components
--All the bucketlist  will be stored in a list and random name picker will choose which goals to display. The 'Gamekit' library contains GKRandomSource  class with its sharedRandom() class method for this. 
--I want to display my shop items in certain stylistic way, this can be achieved with different methods. 'Bootstrap Gallery' Library contains some examples.  
+- All the bucketlist  will be stored in a list and random name picker will choose which goals to display. The 'Gamekit' library contains GKRandomSource  class with its sharedRandom() class method for this. 
+- I want to display my shop items in certain stylistic way, this can be achieved with different methods. 'Bootstrap Gallery' Library contains some examples.  
+
 ###### Similar (web)apps
--Buckist - Create and Manage Bucket List
+- Buckist - Create and Manage Bucket List
 This andriod app has the same concept but uses a static list without rewards. This app does include a synchronize option for multiple devices and a option to explore other users goals. This could perhaps be achieved with Icloud sync. Having to option to share with friends will probably require hosting of a database. This app also contains the option the customize the app, the developers programmed standard templates for this.
 
--Soon
+- Soon
 This IOS app also stores a static bucketlist for users. The benefits of this app is that you users can have multiple categories. This might be harder to include in my version because I'm trying to limit to visable options to keep the next goal a mystery. Soon also stores the bucket list goals completed, this is probably done by adding the completed task to a 'achievements' list. 
 
--Bucket List
+- Bucket List
 This andriod app keeps it simple but offers some nice features. When completing a goal it will save the time and date to the achievements list. The app performs this by having the user check a box when completed which triggers a function to save the time and date of that action. This features has the benefit to make other features like analytics or incentives (e.g. double reward bonus) more feasible. 
 
 ###### Hardest parts 
