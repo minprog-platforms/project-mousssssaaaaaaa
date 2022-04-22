@@ -11,6 +11,7 @@ This results in me and probably other people with a bucket list having a ever gr
 
 ## Solution sketch
 ![Homescreen](/doc/homescreen.png)
+![Homescreen](/doc/additionals.png)
 
 ###### Summary
 This application will hopefully make the user more exicted to interact with his or her bucketlist. The user will receive new goals from time to time to be completed for a reward choosen by the user. 
