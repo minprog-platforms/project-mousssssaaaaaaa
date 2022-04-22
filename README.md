@@ -31,14 +31,12 @@ Because the bucket list and the shop items will be set by the users there won't 
 - I want to display my shop items in certain stylistic way, this can be achieved with different methods. 'Bootstrap Gallery' Library contains some examples.  
 
 ###### Similar (web)apps
-- Buckist - Create and Manage Bucket List
+- Bucklist - Create and Manage Bucket List
 This andriod app has the same concept but uses a static list without rewards. This app does include a synchronize option for multiple devices and a option to explore other users goals. This could perhaps be achieved with Icloud sync. Having to option to share with friends will probably require hosting of a database. This app also contains the option the customize the app, the developers programmed standard templates for this.
 
-- Soon
-This IOS app also stores a static bucketlist for users. The benefits of this app is that you users can have multiple categories. This might be harder to include in my version because I'm trying to limit to visable options to keep the next goal a mystery. Soon also stores the bucket list goals completed, this is probably done by adding the completed task to a 'achievements' list. 
+- Soon - This IOS app also stores a static bucketlist for users. The benefits of this app is that you users can have multiple categories. This might be harder to include in my version because I'm trying to limit to visable options to keep the next goal a mystery. Soon also stores the bucket list goals completed, this is probably done by adding the completed task to a 'achievements' list. 
 
-- Bucket List
-This andriod app keeps it simple but offers some nice features. When completing a goal it will save the time and date to the achievements list. The app performs this by having the user check a box when completed which triggers a function to save the time and date of that action. This features has the benefit to make other features like analytics or incentives (e.g. double reward bonus) more feasible. 
+- Bucket List - This andriod app keeps it simple but offers some nice features. When completing a goal it will save the time and date to the achievements list. The app performs this by having the user check a box when completed which triggers a function to save the time and date of that action. This features has the benefit to make other features like analytics or incentives (e.g. double reward bonus) more feasible. 
 
 ###### Hardest parts 
 It might be difficult create a right loop of adding a goal to list which will then create a randomized task list. Another obstacle could be that the user would have to enter a lot of goals and items before the randomized generator will offer interesting options. I also assume that to balance the 'game' aspect of having goals that are challenging and reachable when the user decides the reward and the price.
