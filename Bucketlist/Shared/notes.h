@@ -5,9 +5,24 @@
 //  Created by Moussa Idaassi on 29/04/2022.
 //
 
-homepage
+
+// UI
+
+- List fixen?????????
+
+
+
+
+
 - add setting tab (kleur en dergelijke style) of (moeilijkheid)
 
-- currency in losee struct in file
+*pas class als je inheritance of andere probleemen.
 
-pas class als je inheritance of andere probleemen. 
+
+
+
+// Logic
+
+- werkend krijgen list (random)
+
+- persistant data voor currency????????

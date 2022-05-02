@@ -32,10 +32,8 @@ struct ViewList: View {
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("Currency : 0").buttonStyle(.bordered)
+                    Text("Currency: \(currency.currency)").buttonStyle(.bordered)
                 }
-                
-                //\(currency)
 
                 ToolbarItem {
                         Button (action: addItem)
