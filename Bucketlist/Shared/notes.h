@@ -8,7 +8,12 @@
 
 // UI
 
-- List fixen?????????
+- List toevoegen met data en attr. lukt maar kan nog niet previewen in main????
+
+- New data voor list?
+
+- list shop?
+
 
 
 
