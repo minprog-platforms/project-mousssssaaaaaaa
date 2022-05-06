@@ -19,7 +19,7 @@ struct ContentView: View {
                     Text("BucketList")
                 }
             
-            ViewShop()
+            ViewShop(Shoplistitems: testData_S)
                 .tabItem() {
                     Image("cart")
                     Text("Shop")

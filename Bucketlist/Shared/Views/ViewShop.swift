@@ -9,18 +9,51 @@ import SwiftUI
 
 struct ViewShop: View {
     
+    // currency view
     @State var currency = Currency()
-
+    
+    // New item
+    @State var showingDetail = false
+    
+    // load items
+    var Shoplistitems: [S_Item] = []
+    
     var body: some View {
-        // add layo+ut from list
+        
         NavigationView {
-            Text("Shop")
-                .toolbar {
-                    ToolbarItem {
-                        Text("Currency: \(currency.currency)").buttonStyle(.bordered)
+            // show bucketlist items
+            List (Shoplistitems) { S_Item in
+                VStack(alignment: .leading) {
+                    Text(S_Item.item)
+                        .bold()
+                    Text("Price: \(S_Item.price)")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    }
+                Button("Buy!") {
+                    
+                }
+            }//.listStyle(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=List Style@*/DefaultListStyle()/*@END_MENU_TOKEN@*/)
+            
+            .toolbar {
+                // display current currency
+                ToolbarItem(placement: .principal) {
+                    Text("Currency: \(currency.currency)").buttonStyle(.bordered)
+                }
+                
+                // Button for new item
+                ToolbarItem {
+                    Button(action: {
+                        self.showingDetail.toggle()
+                    }) {
+                        Text("Add new ")
+                    }.sheet(isPresented: $showingDetail) {
+                        DetailView_S()
                     }
             }
+        }
     }
+}
 }
 
 struct ViewShop_Previews: PreviewProvider {
@@ -28,5 +61,5 @@ struct ViewShop_Previews: PreviewProvider {
         ViewShop()
     }
 }
-}
+
 

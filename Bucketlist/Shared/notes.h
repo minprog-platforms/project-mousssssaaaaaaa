@@ -10,7 +10,9 @@
 
 // UI
 
-- List toevoegen met data? Textfield uitleg????
+- List toevoegen met data? Textfield uitleg???? - keyboard?
+
+- Complete vinkje alleen een voor een?
 
 
 - styling? .background(Color.orange)

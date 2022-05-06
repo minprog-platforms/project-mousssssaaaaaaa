@@ -1,5 +1,5 @@
 //
-//  DetailView.swift
+//  DetailView_S.swift
 //  Bucketlist (iOS)
 //
 //  Created by Moussa Idaassi on 06/05/2022.
@@ -7,35 +7,35 @@
 
 import SwiftUI
 
-struct DetailView: View {
+struct DetailView_S: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var description: String = ""
+    @State private var item: String = ""
     
-    @State private var reward: String = ""
+    @State private var price: String = ""
     
     var body: some View {
         
-        Text("Create a new bucketlist item")
+        Text("Create a new shoplist item")
             .bold()
         Form {
-            Text("Description")
+            Text("Item")
             
             TextField(
                 "",
-                text: $description
-            )
+                text: $item
+            ).keyboardType(.default)
     //        .onSubmit {
     //
     //        }
             
-            Text("Reward")
+            Text("Price")
             
             TextField(
                 "",
-                text: $reward
+                text: $price
             )
         }
         // display back to homescreen
@@ -45,9 +45,9 @@ struct DetailView: View {
     }
 }
             
-struct DetailView_Previews: PreviewProvider {
+struct DetailView_S_Previews: PreviewProvider {
     static var previews: some View {
-        ViewList(Bucketlistitems: testData)
+        ViewShop(Shoplistitems: testData_S)
     }
 }
-    
+ 

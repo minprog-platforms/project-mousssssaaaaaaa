@@ -14,6 +14,6 @@ struct B_Item: Identifiable {
 }
 
 let testData = [
-    B_Item(task: "Read Anne Frank", reward: "5"),
+    B_Item(task: "Read Anne Frank", reward: "20"),
     B_Item(task: "Learn how to fix a bike", reward: "50")
 ]

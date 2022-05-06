@@ -10,11 +10,17 @@ import SwiftUI
 struct ViewList: View {
     @Environment(\.managedObjectContext) private var viewContext
     
+    // currency view
     @State var currency = Currency()
     
+    // New item
+    @State var showingDetail = false
+    
+    // Load items
     var Bucketlistitems: [B_Item] = []
     
-    @State var showingDetail = false
+    // Show when competed
+    @State private var complete = false
     
     var body: some View {
         
@@ -23,12 +29,13 @@ struct ViewList: View {
             List (Bucketlistitems) { B_Item in
                 VStack(alignment: .leading) {
                     Text(B_Item.task)
+                        .bold()
                     Text("Reward: \(B_Item.reward)")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
+                    Toggle("Complete", isOn: $complete)
                     }
-            }
-            
+                    
             .toolbar {
                 // display current currency
                 ToolbarItem(placement: .principal) {
@@ -44,6 +51,7 @@ struct ViewList: View {
                     }.sheet(isPresented: $showingDetail) {
                         DetailView()
                     }
+                }
             }
         }
     }
