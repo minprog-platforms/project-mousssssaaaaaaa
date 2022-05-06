@@ -10,7 +10,8 @@
 
 // UI
 
-- List toevoegen met data en attr. -int weergeven?
+- List toevoegen met data? Textfield uitleg????
+
 
 - styling? .background(Color.orange)
 
