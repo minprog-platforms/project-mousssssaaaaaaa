@@ -6,13 +6,17 @@
 //
 
 
+//Push problemen met Bucketitem.swift
+
 // UI
 
-- List toevoegen met data en attr. lukt maar kan nog niet previewen in main????
+- List toevoegen met data en attr. -int weergeven?
+
+- styling? .background(Color.orange)
 
 - New data voor list?
 
-- list shop?
+- list shop toevoegen..
 
 
 

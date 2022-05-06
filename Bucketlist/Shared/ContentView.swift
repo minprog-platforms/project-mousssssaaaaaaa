@@ -16,9 +16,10 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
+    
     var body: some View {
         TabView {
-            ViewList()
+            ViewList(Bucketlistitems: testData)
                 .tabItem() {
                     Image("list.bullet")
                     Text("BucketList")
@@ -38,3 +39,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
+

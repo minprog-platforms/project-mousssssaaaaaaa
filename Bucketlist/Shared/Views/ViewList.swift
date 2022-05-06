@@ -9,55 +9,60 @@ import SwiftUI
 
 struct ViewList: View {
     @Environment(\.managedObjectContext) private var viewContext
-
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-//        animation: .default)
-//    private var items: FetchedResults<Item>
-    
     
     @State var currency = Currency()
     
-    var Bucketlistitems: [Sandwich] = []
+    var Bucketlistitems: [B_Item] = []
     
     var body: some View {
         
         NavigationView {
-            List (Bucketlistitems) { Sandwich in
+            // show bucketlist items
+            List (Bucketlistitems) { B_Item in
                 VStack(alignment: .leading) {
-                    Text(Sandwich.task)
+                    Text(B_Item.task)
+                    Text("Reward: \(B_Item.reward)")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
-                }
-                
-                
-//                ForEach(items) { item in
-//                    NavigationLink {
-//                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-//                    } label: {
-//                        Text(item.timestamp!, formatter: itemFormatter)
-//                    }
-                }
+                    }
             }
+            
             .toolbar {
+                // display current currency
                 ToolbarItem(placement: .principal) {
                     Text("Currency: \(currency.currency)").buttonStyle(.bordered)
                 }
-
-//                NEW ITEM
-//                ToolbarItem {
-//                        Button (action: addItem)
-//                        {Text ("New item")}.frame(width: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/).buttonStyle(.bordered)
-//                        }
+                
+                // Button for new item
+                ToolbarItem {
+                        Button (action: addItem)
+                        {Text ("New item")}
+                           .frame(width: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
+                           .buttonStyle(.bordered)
                 }
             }
+        }
     }
+}
+
+    private func addItem() {
+        withAnimation {
+            print("TODO: add item")
+        }
+    }
+            
+struct ViewList_Previews: PreviewProvider {
+    static var previews: some View {
+        ViewList(Bucketlistitems: testData)
+    }
+}
     
-//    private func addItem() {
-//        withAnimation {
-//            let newItem = Item(context: viewContext)
-//            newItem.timestamp = Date()
-//
+
+
+
+
+            
+///////////////////////////advanced add item/ delete item//////////
 //            do {
 //                try viewContext.save()
 //            } catch {
@@ -65,9 +70,7 @@ struct ViewList: View {
 //                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
 //                let nsError = error as NSError
 //                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
-//    }
+
 
     
 //    private func deleteItems(offsets: IndexSet) {
@@ -85,16 +88,12 @@ struct ViewList: View {
 //        }
 //    }
 //}
+//
+//private let itemFormatter: DateFormatter = {
+//    let formatter = DateFormatter()
+//    formatter.dateStyle = .short
+//    formatter.timeStyle = .medium
+//    return formatter
+//}()
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
-struct ViewList_Previews: PreviewProvider {
-    static var previews: some View {
-        ViewList(Bucketlistitems: testData)
-    }
-}

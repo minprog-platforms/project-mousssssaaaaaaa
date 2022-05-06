@@ -7,12 +7,13 @@
 
 import Foundation
 
-struct Sandwich: Identifiable {
+struct B_Item: Identifiable {
     var id = UUID()
     var task: String
-    var reward: Int32
+    var reward: String
 }
 
 let testData = [
-    Sandwich(task: "A", reward: 5)
+    B_Item(task: "Read Anne Frank", reward: "5"),
+    B_Item(task: "Learn how to fix a bike", reward: "50")
 ]

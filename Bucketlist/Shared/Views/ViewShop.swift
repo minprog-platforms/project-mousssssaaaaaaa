@@ -8,10 +8,18 @@
 import SwiftUI
 
 struct ViewShop: View {
+    
+    @State var currency = Currency()
+
     var body: some View {
         // add layo+ut from list
-        
-        Text("Shop")
+        NavigationView {
+            Text("Shop")
+                .toolbar {
+                    ToolbarItem {
+                        Text("Currency: \(currency.currency)").buttonStyle(.bordered)
+                    }
+            }
     }
 }
 
@@ -19,5 +27,6 @@ struct ViewShop_Previews: PreviewProvider {
     static var previews: some View {
         ViewShop()
     }
+}
 }
 

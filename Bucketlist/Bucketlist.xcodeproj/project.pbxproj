@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E19AB18282072D600D96432 /* BucketItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19AB17282072D600D96432 /* BucketItem.swift */; };
-		6E19AB19282072D600D96432 /* BucketItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19AB17282072D600D96432 /* BucketItem.swift */; };
+		6E19AB18282072D600D96432 /* Bucketitem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19AB17282072D600D96432 /* Bucketitem.swift */; };
+		6E19AB19282072D600D96432 /* Bucketitem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19AB17282072D600D96432 /* Bucketitem.swift */; };
 		6EF5B150281C0641000140CF /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5B14F281C0641000140CF /* Progress.swift */; };
 		6EF5B151281C0641000140CF /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5B14F281C0641000140CF /* Progress.swift */; };
 		6EFE7C342817CC8B0062DB46 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE7C332817CC8B0062DB46 /* Tests_iOS.swift */; };
@@ -47,7 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6E19AB17282072D600D96432 /* BucketItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketItem.swift; sourceTree = "<group>"; };
+		6E19AB17282072D600D96432 /* Bucketitem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bucketitem.swift; sourceTree = "<group>"; };
 		6EF5B14E281C021F000140CF /* notes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = notes.h; sourceTree = "<group>"; };
 		6EF5B14F281C0641000140CF /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		6EFE7C192817CC860062DB46 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 				6EFE7C1A2817CC860062DB46 /* BucketlistApp.swift */,
 				6EFE7C1B2817CC860062DB46 /* ContentView.swift */,
 				6EF5B14F281C0641000140CF /* Progress.swift */,
-				6E19AB17282072D600D96432 /* BucketItem.swift */,
+				6E19AB17282072D600D96432 /* Bucketitem.swift */,
 				6EFE7C5B2817D5410062DB46 /* Views */,
 				6EFE7C1C2817CC860062DB46 /* Persistence.swift */,
 				6EFE7C1D2817CC8B0062DB46 /* Assets.xcassets */,
@@ -331,7 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E19AB18282072D600D96432 /* BucketItem.swift in Sources */,
+				6E19AB18282072D600D96432 /* Bucketitem.swift in Sources */,
 				6EFE7C432817CC8B0062DB46 /* Bucketlist.xcdatamodeld in Sources */,
 				6EFE7C492817CC8B0062DB46 /* Persistence.swift in Sources */,
 				6EFE7C632817DC700062DB46 /* ViewList.swift in Sources */,
@@ -346,7 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E19AB19282072D600D96432 /* BucketItem.swift in Sources */,
+				6E19AB19282072D600D96432 /* Bucketitem.swift in Sources */,
 				6EFE7C442817CC8B0062DB46 /* Bucketlist.xcdatamodeld in Sources */,
 				6EF5B151281C0641000140CF /* Progress.swift in Sources */,
 				6EFE7C4A2817CC8B0062DB46 /* Persistence.swift in Sources */,
