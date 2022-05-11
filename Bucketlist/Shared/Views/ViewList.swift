@@ -13,22 +13,23 @@ struct ViewList: View {
     // currency view
     @State var currency = Currency()
     
-    // New item
-    @State var showingDetail = false
-    
     // Load items
     var Bucketlistitems: [B_Item] = []
     
     // Show when competed
     @State private var complete = false
     
+    //Sheet
+    @State private var showingSheet = false
+    
+    //New item in sheet
+    @State var test_itemMain: B_Item? = nil
+    
     var body: some View {
         
         NavigationView {
             // show bucketlist items
             List (Bucketlistitems) { B_Item in
-                
-                ZStack {
                     VStack(alignment: .leading){
                         Color.blue
                         Text(B_Item.task)
@@ -47,20 +48,19 @@ struct ViewList: View {
                     
                     // Button for new item
                     ToolbarItem {
-                        Button(action: {
-                            self.showingDetail.toggle()
-                        }) {
-                            Text("Add new ")
-                        }.sheet(isPresented: $showingDetail) {
-                            DetailView()
+                        Button("Add new") {
+                            showingSheet.toggle()
+                        }
+                        .sheet(isPresented: $showingSheet) {
+                            DetailView(test_item: B_Item)
                         }
                     }
-            }
                 }
+            }
         }
     }
 }
-}
+
             
 struct ViewList_Previews: PreviewProvider {
     static var previews: some View {

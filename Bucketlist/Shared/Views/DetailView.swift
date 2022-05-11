@@ -12,9 +12,11 @@ struct DetailView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var description: String = ""
+    @State private var task: String = ""
     
     @State private var reward: String = ""
+    
+    @State var test_item: B_Item
     
     var body: some View {
         
@@ -22,21 +24,17 @@ struct DetailView: View {
             .bold()
         Form {
             Text("Description")
-            
-            TextField(
-                "",
-                text: $description
-            )
-    //        .onSubmit {
-    //
-    //        }
+            TextField("", text: $task)
+            .onSubmit {
+                // Change B_Item
+                
+            }
             
             Text("Reward")
-            
-            TextField(
-                "",
-                text: $reward
-            )
+            TextField("",text: $reward)
+            .onSubmit {
+                // Change B_Item
+            }
         }
         // display back to homescreen
         Button("Save and return") {
