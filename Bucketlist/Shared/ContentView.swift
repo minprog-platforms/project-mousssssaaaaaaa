@@ -12,6 +12,7 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     var body: some View {
+        // Color.orange
         TabView {
             ViewList(Bucketlistitems: testData)
                 .tabItem() {

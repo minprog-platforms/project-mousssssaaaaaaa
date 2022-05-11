@@ -23,13 +23,16 @@ struct ViewShop: View {
         NavigationView {
             // show bucketlist items
             List (Shoplistitems) { S_Item in
-                VStack(alignment: .leading) {
-                    Text(S_Item.item)
-                        .bold()
-                    Text("Price: \(S_Item.price)")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
+                ZStack {
+                    VStack(alignment: .leading) {
+                        Text(S_Item.item)
+                            .bold()
+                        Text("Price: \(S_Item.price)")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
                     }
+                }
+                //Color.blue
                 Button("Buy!") {
                     
                 }

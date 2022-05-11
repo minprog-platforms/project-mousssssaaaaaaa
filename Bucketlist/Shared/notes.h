@@ -19,7 +19,7 @@
 
 - New data voor list?
 
-- list shop toevoegen..
+
 
 
 
