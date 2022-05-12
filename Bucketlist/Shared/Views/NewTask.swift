@@ -16,14 +16,18 @@ struct NewTask: View {
     
     @State private var reward: String = ""
     
-    @Binding var test_item: Bool //B_Item
-
+    @Binding var test_item_task : String //B_Item
+    @Binding var test_item_reward : String //B_Item
     
     var body: some View {
         VStack(spacing: 20.0) {
-            Button("Add new") {
-                test_item.toggle()
+            Button("Add task") {
+                test_item_task = "Task"
             }
+            Button("Add reward") {
+                test_item_reward = "Reward"
+            }
+            
         }
         
         

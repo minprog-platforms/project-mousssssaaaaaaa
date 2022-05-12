@@ -23,7 +23,9 @@ struct ViewList: View {
     @State private var showingSheet = false
     
     //New item in sheet
-    @State var test_itemMain: Bool = true //B_Item? = nil
+    @State var test_itemMain_task: String = "" //B_Item? = nil
+    @State var test_itemMain_reward: String = "" //B_Item? = nil
+    
 
     var body: some View {
         
@@ -33,7 +35,14 @@ struct ViewList: View {
                     VStack(alignment: .leading){
                         Color (.blue)
                         
-                        if (test_itemMain) {
+                        if (test_itemMain_task == "Task") {
+                            Text ("yes")
+                        }
+                        else {
+                            Text ("no")
+                        }
+                        
+                        if (test_itemMain_reward == "Reward") {
                             Text ("yes")
                         }
                         else {
@@ -60,7 +69,7 @@ struct ViewList: View {
                             showingSheet.toggle()
                         }
                         .sheet(isPresented: $showingSheet) {
-                            NewTask(test_item: $test_itemMain)
+                            NewTask(test_item_task: $test_itemMain_task, test_item_reward: $test_itemMain_reward)
                         }
                     }
                 }
