@@ -10,6 +10,10 @@
 
 // UI
 
+-Check waarom binding niet update
+
+-Update shop
+
 - List toevoegen met data? Textfield uitleg???? - keyboard?
 
 - Complete vinkje alleen een voor een?

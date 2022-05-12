@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DetailView_S: View {
+struct NewItem: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @Environment(\.presentationMode) var presentationMode
@@ -45,7 +45,7 @@ struct DetailView_S: View {
     }
 }
             
-struct DetailView_S_Previews: PreviewProvider {
+struct NewItemPreview: PreviewProvider {
     static var previews: some View {
         ViewShop(Shoplistitems: testData_S)
     }

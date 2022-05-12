@@ -13,7 +13,7 @@ struct BucketlistApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Mainpage()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

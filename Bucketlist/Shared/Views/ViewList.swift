@@ -23,15 +23,23 @@ struct ViewList: View {
     @State private var showingSheet = false
     
     //New item in sheet
-    @State var test_itemMain: B_Item? = nil
-    
+    @State var test_itemMain: Bool = true //B_Item? = nil
+
     var body: some View {
         
         NavigationView {
             // show bucketlist items
             List (Bucketlistitems) { B_Item in
                     VStack(alignment: .leading){
-                        Color.blue
+                        Color (.blue)
+                        
+                        if (test_itemMain) {
+                            Text ("yes")
+                        }
+                        else {
+                            Text ("no")
+                        }
+                        
                         Text(B_Item.task)
                             .bold()
                         Text("Reward: \(B_Item.reward)")
@@ -52,7 +60,7 @@ struct ViewList: View {
                             showingSheet.toggle()
                         }
                         .sheet(isPresented: $showingSheet) {
-                            DetailView(test_item: B_Item)
+                            NewTask(test_item: $test_itemMain)
                         }
                     }
                 }

@@ -51,7 +51,7 @@ struct ViewShop: View {
                     }) {
                         Text("Add new ")
                     }.sheet(isPresented: $showingDetail) {
-                        DetailView_S()
+                        NewItem()
                     }
             }
         }
