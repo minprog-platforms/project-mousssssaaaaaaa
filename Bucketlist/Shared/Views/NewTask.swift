@@ -21,43 +21,43 @@ struct NewTask: View {
     
     var body: some View {
         VStack(spacing: 20.0) {
-            Button("Add task") {
-                test_item_task = "Task"
-            }
-            Button("Add reward") {
-                test_item_reward = "Reward"
-            }
-            
-        }
-        
-        
-        
-        
+//            Button("Add task") {
+//                test_item_task = "Task"
+//            }
+//            Button("Add reward") {
+//                test_item_reward = "Reward"
+//            }
+//
+//        }
 //        Button(action: {
 //            test_item.toggle()
 //        }
 //
-//        Text("Create a new bucketlist item")
-//            .bold()
-//        Form {
-//            Text("Description")
-//            TextField("", text: $task)
-////            .onSubmit {
-////                // Change B_Item
-////                test_item.toggle()
-////            }
-//
-//            Text("Reward")
-//            TextField("",text: $reward)
-//            .onSubmit {
-//                // Change B_Item
-//            }
-//        }
+        Text("Create a new bucketlist item")
+            .bold()
+        Form {
+            Text("Description")
+            TextField("", text: $task)
+
+            
+            Text("Reward")
+            TextField("",text: $reward)
+            
+            
+            Button("Submit") {
+                test_item_task = task
+                test_item_reward = reward
+            }
+
+        }
         // display back to homescreen
-        Button("Save and return") {
+        Button("Return") {
             presentationMode.wrappedValue.dismiss()
         }
+            
+        
     }
+}
 }
             
 struct NewTaskPreview: PreviewProvider {
