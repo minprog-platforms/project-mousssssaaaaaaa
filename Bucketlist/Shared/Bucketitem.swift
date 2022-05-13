@@ -11,6 +11,7 @@ struct B_Item: Identifiable {
     var id = UUID()
     var task: String
     var reward: String
+    var complete = false
 }
 
 let testData = [
