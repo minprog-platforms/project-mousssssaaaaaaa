@@ -10,7 +10,7 @@
 
 // UI
 
--Check waarom binding niet update
+-opslaan permanent (persistant storage)
 
 -Update shop
 
