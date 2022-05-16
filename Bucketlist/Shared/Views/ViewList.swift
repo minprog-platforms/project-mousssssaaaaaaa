@@ -38,21 +38,6 @@ struct ViewList: View {
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                         
-//                        if (test_itemMain_task != "") {
-//                            Text("\(test_itemMain_task)").bold()
-//                        }
-//                        else {
-//                            Text("empty")
-//                        }
-//
-//                        if (test_itemMain_reward != "") {
-//                            Text("\(test_itemMain_reward)")                           .font(.subheadline)
-//                                .foregroundColor(.secondary)
-//                        }
-//                        else {
-//                            Text("empty")
-//                        }
-                        
                         Toggle("Complete", isOn: $complete)
                         }
                         
@@ -76,23 +61,6 @@ struct ViewList: View {
         }
     }
 }
-
-//func submit_new(test_itemMain_task: String, test_itemMain_reward: String) {
-//    if (test_itemMain_task != "") {
-//        B_Item.task = test_itemMain_task
-//    }
-//    else {
-//        Text ("empty")
-//    }
-//
-//    if (test_itemMain_reward != "") {
-//        Text ("\(test_itemMain_reward)")
-//    }
-//    else {
-//        Text ("empty")
-//    }
-//}
-
             
 struct ViewList_Previews: PreviewProvider {
     static var previews: some View {
