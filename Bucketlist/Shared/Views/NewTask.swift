@@ -35,10 +35,10 @@ struct NewTask: View {
                     test_item.reward = reward
                 }
         }
-            // display back to homescreen
-            Button("Return") {
-                presentationMode.wrappedValue.dismiss()
-            }
+//            // display back to homescreen
+//            Button("Return") {
+//                presentationMode.wrappedValue.dismiss()
+//            }
         }
     }
 }

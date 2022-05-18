@@ -23,14 +23,13 @@ struct ViewList: View {
     @State private var complete = false
     
     //New item in sheet
-    @State var test_itemMain: B_Item = B_Item(task: "String", reward: "String")
-    
+    @State var test_itemMain: B_Item = B_Item(task: "", reward: "")
 
     var body: some View {
         
         NavigationView {
             // show bucketlist items
-            List (bucketlistitems) { items in
+            List (bucketlistitems) { test_itemMain in
                     VStack(alignment: .leading){
                         Color (.blue)
                         Text(test_itemMain.task)
@@ -63,9 +62,9 @@ struct ViewList: View {
                                         }
                                     }
                                     ToolbarItem(placement: .confirmationAction) {
-                                        Button("Add") {
+                                        Button("New") {
                                             bucketlistitems.append(test_itemMain)
-                                            //test_itemMain = B_Item(task: "Test", reward: "Test")
+                                            test_itemMain = B_Item(task: "", reward: "")
                                             isPresentingNewTaskView = false
                                         }
                                     }
