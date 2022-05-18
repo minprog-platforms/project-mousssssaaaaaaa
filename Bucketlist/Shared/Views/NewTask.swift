@@ -26,11 +26,9 @@ struct NewTask: View {
             Form {
                 Text("Description")
                 TextField("", text: $task)
-
                 
                 Text("Reward")
                 TextField("",text: $reward)
-                
                 
                 Button("Submit") {
                     test_item.task = task
@@ -47,7 +45,7 @@ struct NewTask: View {
             
 struct NewTaskPreview: PreviewProvider {
     static var previews: some View {
-        ViewList(Bucketlistitems: testData)
+        ViewList(bucketlistitems: .constant(testData), saveAction: {})
     }
 }
     

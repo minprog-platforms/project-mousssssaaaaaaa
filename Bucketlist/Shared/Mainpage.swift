@@ -9,6 +9,7 @@ import SwiftUI
 import CoreData
 
 struct Mainpage: View {
+    
     @Environment(\.managedObjectContext) private var viewContext
     
     // persistent data
@@ -17,17 +18,26 @@ struct Mainpage: View {
     var body: some View {
         // Color.orange
         TabView {
-            ViewList(Bucketlistitems: testData)
-//            ViewList(Bucketlistitems: $store.bucketI)
-//                .onAppear {
-//                BucketStore.load { result in
-//                    switch result {
-//                    case .failure(let error):
-//                        fatalError(error.localizedDescription)
-//                    case .success(let bucketI):
-//                        store.bucketI = bucketI
-//                }
-//            }
+            // ViewList(Bucketlistitems: testData)
+            ViewList(bucketlistitems: $store.bucketI) {
+                BucketStore.save(bucketI: store.bucketI) { result in
+                    if case .failure(let error) = result {
+                        fatalError(error.localizedDescription)
+                    }
+                }
+            }
+                .onAppear {
+                    BucketStore.load { result in
+                        switch result {
+                        case .failure(let error):
+                            print("fail")
+                            fatalError(error.localizedDescription)
+                        case .success(let bucketI):
+                            print("success")
+                            store.bucketI = bucketI
+                        }
+                    }
+                }
                 .tabItem() {
                     Image("list.bullet")
                     Text("BucketList")

@@ -10,26 +10,27 @@ import SwiftUI
 struct ViewList: View {
     @Environment(\.managedObjectContext) private var viewContext
     
+    // Load items
+    @Binding var bucketlistitems: [B_Item]
+    @Environment(\.scenePhase) private var scenePhase
+    @State private var isPresentingNewTaskView = false
+    let saveAction: ()->Void
+    
     // currency view
     @State var currency = Currency()
-    
-    // Load items
-    var Bucketlistitems: [B_Item] = []
     
     // Show when competed
     @State private var complete = false
     
-    //Sheet
-    @State private var showingSheet = false
-    
     //New item in sheet
     @State var test_itemMain: B_Item = B_Item(task: "String", reward: "String")
+    
 
     var body: some View {
         
         NavigationView {
             // show bucketlist items
-            List (Bucketlistitems) { B_Item in
+            List (bucketlistitems) { items in
                     VStack(alignment: .leading){
                         Color (.blue)
                         Text(test_itemMain.task)
@@ -40,30 +41,49 @@ struct ViewList: View {
                         
                         Toggle("Complete", isOn: $complete)
                         }
-                        
-                .toolbar {
-                    // display current currency
-                    ToolbarItem(placement: .principal) {
-                        Text("Currency: \(currency.currency)").buttonStyle(.bordered)
+            }
+            .toolbar {
+                // display current currency
+                ToolbarItem(placement: .principal) {
+                    Text("Currency: \(currency.currency)").buttonStyle(.bordered)
+                }
+                
+                // Button for new item
+                ToolbarItem {
+                    Button("Add new") {
+                        isPresentingNewTaskView.toggle()
                     }
-                    
-                    // Button for new item
-                    ToolbarItem {
-                        Button("Add new") {
-                            showingSheet.toggle()
-                        }
-                        .sheet(isPresented: $showingSheet) {
+                    .sheet(isPresented: $isPresentingNewTaskView) {
+                        NavigationView {
                             NewTask(test_item: $test_itemMain)
+                                .toolbar {
+                                    ToolbarItem(placement: .cancellationAction) {
+                                        Button("Dismiss") {
+                                            isPresentingNewTaskView = false
+                                        }
+                                    }
+                                    ToolbarItem(placement: .confirmationAction) {
+                                        Button("Add") {
+                                            bucketlistitems.append(test_itemMain)
+                                            //test_itemMain = B_Item(task: "Test", reward: "Test")
+                                            isPresentingNewTaskView = false
+                                        }
+                                    }
+                                }
                         }
                     }
                 }
             }
         }
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive { saveAction() }
+        }
+            //.listRowBackground(Color.black)
     }
 }
-            
+
 struct ViewList_Previews: PreviewProvider {
     static var previews: some View {
-        ViewList(Bucketlistitems: testData)
+        ViewList(bucketlistitems: .constant(testData), saveAction: {})
     }
 }
