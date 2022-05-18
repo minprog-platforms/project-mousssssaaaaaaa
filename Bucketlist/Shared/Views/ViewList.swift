@@ -32,9 +32,9 @@ struct ViewList: View {
             List (Bucketlistitems) { B_Item in
                     VStack(alignment: .leading){
                         Color (.blue)
-                        Text(B_Item.task)
+                        Text(test_itemMain.task)
                             .bold()
-                        Text("Reward: \(B_Item.reward)")
+                        Text("Reward: \(test_itemMain.reward)")
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                         
