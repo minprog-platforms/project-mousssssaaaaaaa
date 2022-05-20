@@ -19,11 +19,13 @@ struct ViewList: View {
     // currency view
     @State var currency = Currency()
     
-    // Show when competed
+    // Show when completed
     @State private var complete = false
+    @State private var isDisplayed = false
     
     //New item in sheet
-    @State var test_itemMain: B_Item = B_Item(task: "", reward: "")
+    @State var test_itemMain: B_Item = B_Item(task: "", reward: "", complete: false)
+
 
     var body: some View {
         
@@ -38,7 +40,10 @@ struct ViewList: View {
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                         
-                        Toggle("Complete", isOn: $complete)
+                        
+                        Text("Complete: \( $test_itemMain.complete.wrappedValue ? "True" : "False")")
+                        Toggle("Complete", isOn: $test_itemMain.complete)
+                        
                         }
             }
             .toolbar {
@@ -56,15 +61,10 @@ struct ViewList: View {
                         NavigationView {
                             NewTask(test_item: $test_itemMain)
                                 .toolbar {
-                                    ToolbarItem(placement: .cancellationAction) {
-                                        Button("Dismiss") {
-                                            isPresentingNewTaskView = false
-                                        }
-                                    }
                                     ToolbarItem(placement: .confirmationAction) {
-                                        Button("New") {
+                                        Button("Close") {
                                             bucketlistitems.append(test_itemMain)
-                                            test_itemMain = B_Item(task: "", reward: "")
+                                            test_itemMain = B_Item(task: "", reward: "", complete: false)
                                             isPresentingNewTaskView = false
                                         }
                                     }

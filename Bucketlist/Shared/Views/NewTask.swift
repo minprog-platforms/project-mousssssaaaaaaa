@@ -16,6 +16,8 @@ struct NewTask: View {
     
     @State private var reward: String = ""
     
+    @State private var complete: Bool = false
+    
     @Binding var test_item : B_Item
 
     
@@ -30,9 +32,12 @@ struct NewTask: View {
                 Text("Reward")
                 TextField("",text: $reward)
                 
+                
                 Button("Submit") {
                     test_item.task = task
                     test_item.reward = reward
+                    //test_item.complete = $complete
+                    
                 }
         }
 //            // display back to homescreen
