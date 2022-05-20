@@ -8,5 +8,5 @@
 import SwiftUI
 
 struct Currency {
-    var currency = 20
+    var currency = 0
 }

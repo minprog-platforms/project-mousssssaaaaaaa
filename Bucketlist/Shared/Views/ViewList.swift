@@ -16,7 +16,7 @@ struct ViewList: View {
     @State private var isPresentingNewTaskView = false
     let saveAction: ()->Void
     
-    // currency view
+    // currency
     @State var currency = Currency()
     
     // Show when completed
@@ -31,29 +31,36 @@ struct ViewList: View {
         
         NavigationView {
             // show bucketlist items
-            List (bucketlistitems) { test_itemMain in
+            List ($bucketlistitems) { $item in
                     VStack(alignment: .leading){
                         Color (.blue)
-                        Text(test_itemMain.task)
+                        Text(item.task)
                             .bold()
-                        Text("Reward: \(test_itemMain.reward)")
+                        Text("Reward: \(item.reward)")
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                         
                         
-                        Text("Complete: \( $test_itemMain.complete.wrappedValue ? "True" : "False")")
-                        Toggle("Complete", isOn: $test_itemMain.complete)
-                        
+                        Text("Complete: \( $item.complete.wrappedValue ? "True" : "False")")
+                        Toggle("Complete", isOn: $item.complete)
+                            .onChange(of: item.complete) {
+                                _ in saveAction()
+                                
+                                // Earn currency
+                                if (item.complete == true) {
+                                    currency.currency = currency.currency + Int(item.reward)! }
+                                else {                                     currency.currency = currency.currency - Int(item.reward)!}
+                            }
                         }
             }
             .toolbar {
                 // display current currency
-                ToolbarItem(placement: .principal) {
-                    Text("Currency: \(currency.currency)").buttonStyle(.bordered)
+                ToolbarItem {
+                    Text("Currency: \(currency.currency)")
                 }
                 
                 // Button for new item
-                ToolbarItem {
+                ToolbarItem(placement: .principal) {
                     Button("Add new") {
                         isPresentingNewTaskView.toggle()
                     }

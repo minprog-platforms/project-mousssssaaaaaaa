@@ -35,15 +35,9 @@ struct NewTask: View {
                 
                 Button("Submit") {
                     test_item.task = task
-                    test_item.reward = reward
-                    //test_item.complete = $complete
-                    
+                    test_item.reward = reward                    
                 }
         }
-//            // display back to homescreen
-//            Button("Return") {
-//                presentationMode.wrappedValue.dismiss()
-//            }
         }
     }
 }
