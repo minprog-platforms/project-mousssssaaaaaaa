@@ -15,6 +15,9 @@ struct Mainpage: View {
     // persistent data
     @StateObject private var store = BucketStore()
     
+    // persistent data
+    @StateObject private var storeI = ShopStore()
+
     var body: some View {
         // Color.orange
         TabView {
@@ -43,7 +46,25 @@ struct Mainpage: View {
                     Text("BucketList")
                 }
             
-            ViewShop(Shoplistitems: testData_S)
+            ViewShop(shoplistitems: $storeI.shopI) {
+                ShopStore.save(shopI: storeI.shopI) { result in
+                    if case .failure(let error) = result {
+                        fatalError(error.localizedDescription)
+                    }
+                }
+            }
+            .onAppear {
+                ShopStore.load { result in
+                    switch result {
+                    case .failure(let error):
+                        print("fail")
+                        fatalError(error.localizedDescription)
+                    case .success(let shopI):
+                        print("success")
+                        storeI.shopI = shopI
+                    }
+                }
+            }
                 .tabItem() {
                     Image("cart")
                     Text("Shop")

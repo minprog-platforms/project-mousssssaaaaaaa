@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct S_Item: Identifiable {
+struct S_Item: Identifiable, Codable {
     var id = UUID()
     var item: String
     var price: String

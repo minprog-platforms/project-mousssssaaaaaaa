@@ -16,38 +16,32 @@ struct NewItem: View {
     
     @State private var price: String = ""
     
+    @Binding var test_item : S_Item
+    
     var body: some View {
-        
-        Text("Create a new shoplist item")
-            .bold()
-        Form {
-            Text("Item")
-            
-            TextField(
-                "",
-                text: $item
-            ).keyboardType(.default)
-    //        .onSubmit {
-    //
-    //        }
-            
-            Text("Price")
-            
-            TextField(
-                "",
-                text: $price
-            )
+        VStack(spacing: 20.0) {
+            Text("Create a new shoplist item")
+                .bold()
+            Form {
+                Text("Description")
+                TextField("", text: $item)
+                
+                Text("Price")
+                TextField("",text: $price)
+                
+                
+                Button("Submit") {
+                    test_item.item = item
+                    test_item.price = price
+                }
         }
-        // display back to homescreen
-        Button("Save and return") {
-            presentationMode.wrappedValue.dismiss()
         }
     }
 }
             
 struct NewItemPreview: PreviewProvider {
     static var previews: some View {
-        ViewShop(Shoplistitems: testData_S)
+        ViewShop(shoplistitems: .constant(testData_S), saveActionI: {})
     }
 }
  

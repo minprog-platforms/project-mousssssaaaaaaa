@@ -10,18 +10,21 @@
 
 // UI
 
--opslaan permanent (persistant storage)
 
--Update shop
-
-- List toevoegen met data? Textfield uitleg???? - keyboard?
-
-- Complete vinkje alleen een voor een?
+-Update shop (error (fail to load data))
+* SaveactionI helpt niet
 
 
-- styling? .background(Color.orange)
+erroro message
+"dataCorrupted(Swift.DecodingError.Context(codingPath: [], debugDescription: "The given data was not valid JSON.", underlyingError: Optional(Error Domain=NSCocoaErrorDomain Code=3840 "Unable to parse empty data." UserInfo={NSDebugDescription=Unable to parse empty data.})))"
 
-- New data voor list?
+
+
+
+
+
+
+
 
 
 
@@ -31,8 +34,6 @@
 
 
 - add setting tab (kleur en dergelijke style) of (moeilijkheid)
-
-*pas class als je inheritance of andere probleemen.
 
 
 
