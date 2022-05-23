@@ -41,16 +41,18 @@ struct ViewList: View {
                             .foregroundColor(.secondary)
                         
                         
-                        Text("Complete: \( $item.complete.wrappedValue ? "True" : "False")")
+                        //Text("Complete: \( $item.complete.wrappedValue ? "True" : "False")")
                         Toggle("Complete", isOn: $item.complete)
+                            .tint(.blue)
                             .onChange(of: item.complete) {
                                 _ in saveAction()
                                 
                                 // Earn currency
                                 if (item.complete == true) {
-                                    currency.currency = currency.currency + Int(item.reward)! }
-                                else {                                     currency.currency = currency.currency - Int(item.reward)!}
+                                    currency.currency = currency.currency + (Int(item.reward) ?? 0) }
+                                else {  currency.currency = currency.currency}
                             }
+                            
                         }
             }
             .toolbar {

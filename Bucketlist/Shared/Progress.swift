@@ -7,6 +7,6 @@
 
 import SwiftUI
 
-struct Currency {
+struct Currency: Codable {
     var currency = 0
 }

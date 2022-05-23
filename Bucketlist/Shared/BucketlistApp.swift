@@ -18,3 +18,4 @@ struct BucketlistApp: App {
         }
     }
 }
+

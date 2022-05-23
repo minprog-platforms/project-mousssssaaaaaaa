@@ -10,7 +10,7 @@ import SwiftUI
 
 class BucketStore: ObservableObject {
     @Published var bucketI: [B_Item] = []
-
+    
     private static func fileURL() throws -> URL {
         try FileManager.default.url(for: .documentDirectory,
                                        in: .userDomainMask,
