@@ -9,24 +9,20 @@ import SwiftUI
 
 struct ViewShop: View {
 
-    // Load items
+    // var for items
     @Binding var shoplistitems: [S_Item]
-    @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewTaskView = false
+    
+    // var for new item
+    @State var shop_itemMain: S_Item = S_Item(item: "", price: "")
+    @State private var scenery_flag = true
     let saveActionI: ()->Void
     
-    // currency
+    // var for currency
     @State var currency = Currency()
     
     // Show when completed
     @State private var complete = false
-    @State private var isDisplayed = false
-    
-    //New item in sheet
-    @State var shop_itemMain: S_Item = S_Item(item: "", price: "")
-    
-    // save new item
-    @State private var scenery_flag = true
     
     var body: some View {
         

@@ -7,12 +7,14 @@
 import SwiftUI
 
 struct ViewList: View {
-    @Environment(\.managedObjectContext) private var viewContext
     
-    // Load items
+    // var for items
     @Binding var bucketlistitems: [B_Item]
-    @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewTaskView = false
+
+    // Var for New item
+    @State var test_itemMain: B_Item = B_Item(task: "", reward: "", complete: false)
+    @State private var scenery_flag = true
     let saveAction: ()->Void
     
     // currency view
@@ -20,13 +22,6 @@ struct ViewList: View {
     
     // Show when completed
     @State private var complete = false
-    @State private var isDisplayed = false
-    
-    //New item in sheet
-    @State var test_itemMain: B_Item = B_Item(task: "", reward: "", complete: false)
-    // save new item
-    @State private var scenery_flag = true
-
 
     var body: some View {
         
@@ -47,6 +42,8 @@ struct ViewList: View {
                                 _ in saveAction()
                                 
                                 // Earn currency
+                                
+                                
                                 if (item.complete == true) {
                                     currency.currency = currency.currency + (Int(item.reward) ?? 0) }
                                 else {  currency.currency = currency.currency}
