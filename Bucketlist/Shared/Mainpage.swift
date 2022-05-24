@@ -16,13 +16,14 @@ struct Mainpage: View {
     // persistent data
     @StateObject private var storeI = ShopStore()
     
-//    // persistent data
-//    @StateObject private var curr = Progress_Store()
+    // persistent data
+    @StateObject private var curr = Progress_Store()
 
     var body: some View {
 
         TabView {
-            ViewList(bucketlistitems: $store.bucketI) {
+            ViewList(bucketlistitems: $store.bucketI) //, currency: $curr.cur
+            {
                 BucketStore.save(bucketI: store.bucketI) { result in
                     if case .failure(let error) = result {
                         fatalError(error.localizedDescription)

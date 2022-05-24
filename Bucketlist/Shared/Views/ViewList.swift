@@ -18,6 +18,7 @@ struct ViewList: View {
     let saveAction: ()->Void
     
     // var currency
+    //@Binding var currency : [Currency_progress]
     @State var currency = Currency_progress()
     
     // var for completion
@@ -26,8 +27,10 @@ struct ViewList: View {
     var body: some View {
         
         NavigationView {
+            let regular_list = $bucketlistitems //*var
+            
             // show bucketlist items
-            List ($bucketlistitems) { $item in
+            List (regular_list) { $item in
                     VStack(alignment: .leading){
                         Color (.blue)
                         Text(item.task)
@@ -41,8 +44,11 @@ struct ViewList: View {
                             .onChange(of: item.complete) {
                                 _ in saveAction()
                                 
-                                // Earn currency
+                                // earn currency
                                 currency.currency_mut(complete: item.complete, reward: item.reward)
+                                
+                                // shuffle list??????????????????????????????????
+                                // regular_list = $bucketlistitems.shuffled()
                             }
                         }
             }
@@ -52,7 +58,7 @@ struct ViewList: View {
                     Text("Currency: \(currency.currency)").buttonStyle(.bordered)
                 }
                 
-                // Button for new item
+                // button/ menu for new item
                 ToolbarItem {
                     Button("Add new") {
                         isPresentingNewTaskView.toggle()

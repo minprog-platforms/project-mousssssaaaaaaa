@@ -15,11 +15,11 @@
 
 
 - randomize results:
-shuffle() when completed
+shuffle() when completed????
 
 
 - Fix currency persistence
-
+kan ik logica currency en persistent waarden via een struct laten lopen?
 
 
 TODO
