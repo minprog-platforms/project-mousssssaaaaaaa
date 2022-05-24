@@ -62,10 +62,14 @@ struct ViewShop: View {
                             .toolbar {
                                 ToolbarItem(placement: .confirmationAction) {
                                     Button("Close") {
-                                        // add items with descriptions
+                                        
+//                                        // add items with descriptions
                                         if (new_shopitem.item != "") {
                                             shoplistitems.append(new_shopitem)
                                         }
+                                        
+                                        // reset placeholder
+                                        new_shopitem = S_Item(item: "", price: "")
                                         
                                         // flip scenery flag
                                         scenery_flag = scenery_flag == false

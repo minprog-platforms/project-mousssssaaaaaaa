@@ -75,6 +75,8 @@ struct ViewList: View {
                                         if (new_task.task != "") {
                                             bucketlistitems.append(new_task)
                                         }
+                                        
+                                        // reset placeholder
                                         new_task = B_Item(task: "", reward: "", complete: false)
                                         
                                         // flip scenery flag
