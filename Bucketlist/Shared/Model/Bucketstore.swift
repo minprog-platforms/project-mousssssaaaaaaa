@@ -35,13 +35,13 @@ class BucketStore: ObservableObject {
                 }
             } catch {
                 DispatchQueue.main.async {
-                    print(String(describing: error))
-                    // completion(.failure(error))
+                    completion(.failure(error))
                 }
             }
         }
     }
         static func save(bucketI: [B_Item], completion: @escaping (Result<Int, Error>)->Void) {
+            
             DispatchQueue.global(qos: .background).async {
                 do {
                     let data = try JSONEncoder().encode(bucketI)
@@ -49,10 +49,12 @@ class BucketStore: ObservableObject {
                     try data.write(to: outfile)
                     DispatchQueue.main.async {
                         completion(.success(bucketI.count))
+                        print ("save succes")
                     }
                 } catch {
                     DispatchQueue.main.async {
                         completion(.failure(error))
+                        print ("save failed")
                     }
                 }
             }

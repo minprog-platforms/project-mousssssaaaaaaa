@@ -10,18 +10,20 @@ import CoreData
 
 struct Mainpage: View {
     
-    @Environment(\.managedObjectContext) private var viewContext
+    //@Environment(\.managedObjectContext) private var viewContext
     
     // persistent data
     @StateObject private var store = BucketStore()
     
     // persistent data
     @StateObject private var storeI = ShopStore()
+    
+//    // persistent data
+//    @StateObject private var curr = Progress_Store()
 
     var body: some View {
-        // Color.orange
+
         TabView {
-            // ViewList(Bucketlistitems: testData)
             ViewList(bucketlistitems: $store.bucketI) {
                 BucketStore.save(bucketI: store.bucketI) { result in
                     if case .failure(let error) = result {
@@ -33,10 +35,10 @@ struct Mainpage: View {
                     BucketStore.load { result in
                         switch result {
                         case .failure(let error):
-                            print("fail")
+                            print("fail list")
                             fatalError(error.localizedDescription)
                         case .success(let bucketI):
-                            print("success")
+                            print("success list")
                             store.bucketI = bucketI
                         }
                     }
@@ -57,10 +59,10 @@ struct Mainpage: View {
                 ShopStore.load { result in
                     switch result {
                     case .failure(let error):
-                        print("fail")
+                        print("fail Shop")
                         fatalError(error.localizedDescription)
                     case .success(let shopI):
-                        print("success")
+                        print("success Shop")
                         storeI.shopI = shopI
                     }
                 }
@@ -73,9 +75,9 @@ struct Mainpage: View {
     }
 }
 
-struct Mainpage_Previews: PreviewProvider {
-    static var previews: some View {
-        Mainpage().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}
-
+//struct Mainpage_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Mainpage().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//    }
+//}
+//

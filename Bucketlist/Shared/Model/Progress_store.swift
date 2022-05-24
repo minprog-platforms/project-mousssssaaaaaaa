@@ -7,7 +7,7 @@
 //
 //import SwiftUI
 //
-//class ProgressStore: ObservableObject {
+//class Progress_Store: ObservableObject {
 //    @Published var cur: [Currency] = []
 //
 //    private static func fileURL() throws -> URL {
@@ -28,7 +28,7 @@
 //                    }
 //                    return
 //                }
-//                let S_Item = try JSONDecoder().decode([Currency].self, from: file.availableData)
+//                let Currency = try JSONDecoder().decode([Currency].self, from: file.availableData)
 //                DispatchQueue.main.async {
 //                    completion(.success(Currency))
 //                }

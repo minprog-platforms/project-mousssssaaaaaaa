@@ -6,17 +6,36 @@
 //
 
 
-//Push problemen met Bucketitem.swift
 
 // UI
 
 
--Update shop (error (fail to load data))
+
+// Logic
+
+// .save is not triggered
+viewlist or shoplist
+
+
+- randomize results:
+shuffle() when completed
+
+
+- Fix currency persistence
+
+
+
+TODO
+- Button buy?
+
+
+
+- Update shop (error (fail to load data)) ---SOLVED?
 * SaveactionI helpt niet
 
-
-erroro message
+error message
 "dataCorrupted(Swift.DecodingError.Context(codingPath: [], debugDescription: "The given data was not valid JSON.", underlyingError: Optional(Error Domain=NSCocoaErrorDomain Code=3840 "Unable to parse empty data." UserInfo={NSDebugDescription=Unable to parse empty data.})))"
+
 
 
 

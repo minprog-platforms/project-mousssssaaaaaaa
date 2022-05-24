@@ -42,12 +42,13 @@ struct ViewShop: View {
                     Text("Reward: \(item.price)")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
+                    //Color.blue
+                    Button("Buy!") {
+                        // decrease currency with price
+                        }
                     }
             }
-//                //Color.blue
-//                Button("Buy!") {
-//
-//                }
+
             .toolbar {
                 // display current currency
                 ToolbarItem(placement: .principal) {
@@ -75,9 +76,9 @@ struct ViewShop: View {
                     }
                 }
             }
-            .onChange(of: scenePhase) { phase in
-                if phase == .inactive { saveActionI() }
-            }
+        }
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive { saveActionI() }
         }
         }
     }

@@ -4,7 +4,6 @@
 //
 //  Created by Moussa Idaassi on 26/04/2022.
 //
-
 import SwiftUI
 
 struct ViewList: View {
@@ -16,7 +15,7 @@ struct ViewList: View {
     @State private var isPresentingNewTaskView = false
     let saveAction: ()->Void
     
-    // currency
+    // currency view
     @State var currency = Currency()
     
     // Show when completed
@@ -25,6 +24,8 @@ struct ViewList: View {
     
     //New item in sheet
     @State var test_itemMain: B_Item = B_Item(task: "", reward: "", complete: false)
+    // save new item
+    @State private var scenery_flag = true
 
 
     var body: some View {
@@ -40,8 +41,6 @@ struct ViewList: View {
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                         
-                        
-                        //Text("Complete: \( $item.complete.wrappedValue ? "True" : "False")")
                         Toggle("Complete", isOn: $item.complete)
                             .tint(.blue)
                             .onChange(of: item.complete) {
@@ -52,17 +51,16 @@ struct ViewList: View {
                                     currency.currency = currency.currency + (Int(item.reward) ?? 0) }
                                 else {  currency.currency = currency.currency}
                             }
-                            
                         }
             }
             .toolbar {
                 // display current currency
-                ToolbarItem {
-                    Text("Currency: \(currency.currency)")
+                ToolbarItem(placement: .principal) {
+                    Text("Currency: \(currency.currency)").buttonStyle(.bordered)
                 }
                 
                 // Button for new item
-                ToolbarItem(placement: .principal) {
+                ToolbarItem {
                     Button("Add new") {
                         isPresentingNewTaskView.toggle()
                     }
@@ -75,18 +73,24 @@ struct ViewList: View {
                                             bucketlistitems.append(test_itemMain)
                                             test_itemMain = B_Item(task: "", reward: "", complete: false)
                                             isPresentingNewTaskView = false
+                                            print("a")
+                                            
+                                            // flip scenery flag
+                                            scenery_flag = scenery_flag == false
                                         }
                                     }
                                 }
                         }
+
                     }
+                    .onChange(of: scenery_flag) { _ in
+                        print ("b")
+                        saveAction()
+                        print ("c")
+                        }
                 }
             }
         }
-        .onChange(of: scenePhase) { phase in
-            if phase == .inactive { saveAction() }
-        }
-            //.listRowBackground(Color.black)
     }
 }
 
