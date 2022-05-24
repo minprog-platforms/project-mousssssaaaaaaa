@@ -70,12 +70,18 @@ struct ViewList: View {
                             .toolbar {
                                 ToolbarItem(placement: .confirmationAction) {
                                     Button("Close") {
-                                        bucketlistitems.append(new_task)
+                                        
+                                        // add items with descriptions
+                                        if (new_task.task != "") {
+                                            bucketlistitems.append(new_task)
+                                        }
                                         new_task = B_Item(task: "", reward: "", complete: false)
-                                        isPresentingNewTaskView = false
                                         
                                         // flip scenery flag
                                         scenery_flag = scenery_flag == false
+                                        
+                                        // close sheet
+                                        isPresentingNewTaskView = false
                                     }
                                 }
                             }

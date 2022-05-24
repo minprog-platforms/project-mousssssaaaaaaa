@@ -62,12 +62,16 @@ struct ViewShop: View {
                             .toolbar {
                                 ToolbarItem(placement: .confirmationAction) {
                                     Button("Close") {
-                                        shoplistitems.append(new_shopitem)
-                                        new_shopitem = S_Item(item: "", price: "")
-                                        isPresentingNewTaskView = false
+                                        // add items with descriptions
+                                        if (new_shopitem.item != "") {
+                                            shoplistitems.append(new_shopitem)
+                                        }
                                         
                                         // flip scenery flag
                                         scenery_flag = scenery_flag == false
+                                        
+                                        //close sheet
+                                        isPresentingNewTaskView = false
                                     }
                                 }
                             }

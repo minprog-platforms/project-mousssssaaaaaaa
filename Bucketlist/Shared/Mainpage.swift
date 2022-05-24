@@ -12,11 +12,7 @@ struct Mainpage: View {
     
     // persistent data
     @StateObject private var store = BucketStore()
-    
-    // persistent data
     @StateObject private var storeI = ShopStore()
-    
-    // persistent data
     @StateObject private var curr = Progress_Store()
 
     var body: some View {
