@@ -11,10 +11,11 @@ struct ViewShop: View {
 
     // var for items
     @Binding var shoplistitems: [S_Item]
-    @State private var isPresentingNewTaskView = false
+
     
     // var for new item
-    @State var shop_itemMain: S_Item = S_Item(item: "", price: "")
+    @State var new_shopitem: S_Item = S_Item(item: "", price: "")
+    @State private var isPresentingNewTaskView = false
     @State private var scenery_flag = true
     let saveActionI: ()->Void
     
@@ -56,19 +57,20 @@ struct ViewShop: View {
                     }
                     .sheet(isPresented: $isPresentingNewTaskView) {
                         NavigationView {
-                            NewItem(test_item: $shop_itemMain)
-                                .toolbar {
-                                    ToolbarItem(placement: .confirmationAction) {
-                                        Button("Close") {
-                                            shoplistitems.append(shop_itemMain)
-                                            shop_itemMain = S_Item(item: "", price: "")
-                                            isPresentingNewTaskView = false
-                                            
-                                            // flip scenery flag
-                                            scenery_flag = scenery_flag == false
-                                        }
+                            NewItem(test_item: $new_shopitem)
+                            
+                            .toolbar {
+                                ToolbarItem(placement: .confirmationAction) {
+                                    Button("Close") {
+                                        shoplistitems.append(new_shopitem)
+                                        new_shopitem = S_Item(item: "", price: "")
+                                        isPresentingNewTaskView = false
+                                        
+                                        // flip scenery flag
+                                        scenery_flag = scenery_flag == false
                                     }
                                 }
+                            }
                         }
                     }
                     .onChange(of: scenery_flag) { _ in

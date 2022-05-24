@@ -4,6 +4,7 @@
 //
 //  Created by Moussa Idaassi on 16/05/2022.
 //
+//  Inspired by https://developer.apple.com/tutorials/app-dev-training/persisting-data
 
 import Foundation
 import SwiftUI
@@ -40,23 +41,24 @@ class BucketStore: ObservableObject {
             }
         }
     }
-        static func save(bucketI: [B_Item], completion: @escaping (Result<Int, Error>)->Void) {
-            
-            DispatchQueue.global(qos: .background).async {
-                do {
-                    let data = try JSONEncoder().encode(bucketI)
-                    let outfile = try fileURL()
-                    try data.write(to: outfile)
-                    DispatchQueue.main.async {
-                        completion(.success(bucketI.count))
-                        print ("save succes")
-                    }
-                } catch {
-                    DispatchQueue.main.async {
-                        completion(.failure(error))
-                        print ("save failed")
-                    }
+    
+    static func save(bucketI: [B_Item], completion: @escaping (Result<Int, Error>)->Void) {
+        
+        DispatchQueue.global(qos: .background).async {
+            do {
+                let data = try JSONEncoder().encode(bucketI)
+                let outfile = try fileURL()
+                try data.write(to: outfile)
+                DispatchQueue.main.async {
+                    completion(.success(bucketI.count))
+                    print ("save succes")
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                    print ("save failed")
                 }
             }
+        }
     }
 }

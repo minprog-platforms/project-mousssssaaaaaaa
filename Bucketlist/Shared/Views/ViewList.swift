@@ -10,10 +10,10 @@ struct ViewList: View {
     
     // var for items
     @Binding var bucketlistitems: [B_Item]
-    @State private var isPresentingNewTaskView = false
 
     // Var for New item
-    @State var test_itemMain: B_Item = B_Item(task: "", reward: "", complete: false)
+    @State var new_task: B_Item = B_Item(task: "", reward: "", complete: false)
+    @State private var isPresentingNewTaskView = false
     @State private var scenery_flag = true
     let saveAction: ()->Void
     
@@ -59,21 +59,21 @@ struct ViewList: View {
                     }
                     .sheet(isPresented: $isPresentingNewTaskView) {
                         NavigationView {
-                            NewTask(test_item: $test_itemMain)
-                                .toolbar {
-                                    ToolbarItem(placement: .confirmationAction) {
-                                        Button("Close") {
-                                            bucketlistitems.append(test_itemMain)
-                                            test_itemMain = B_Item(task: "", reward: "", complete: false)
-                                            isPresentingNewTaskView = false
-                                            
-                                            // flip scenery flag
-                                            scenery_flag = scenery_flag == false
-                                        }
+                            NewTask(test_item: $new_task)
+                            
+                            .toolbar {
+                                ToolbarItem(placement: .confirmationAction) {
+                                    Button("Close") {
+                                        bucketlistitems.append(new_task)
+                                        new_task = B_Item(task: "", reward: "", complete: false)
+                                        isPresentingNewTaskView = false
+                                        
+                                        // flip scenery flag
+                                        scenery_flag = scenery_flag == false
                                     }
                                 }
+                            }
                         }
-
                     }
                     .onChange(of: scenery_flag) { _ in
                         saveAction()

@@ -13,9 +13,6 @@
 
 // Logic
 
-// .save is not triggered
-viewlist or shoplist
-
 
 - randomize results:
 shuffle() when completed

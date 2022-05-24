@@ -10,8 +10,6 @@ import CoreData
 
 struct Mainpage: View {
     
-    //@Environment(\.managedObjectContext) private var viewContext
-    
     // persistent data
     @StateObject private var store = BucketStore()
     
@@ -31,22 +29,20 @@ struct Mainpage: View {
                     }
                 }
             }
-                .onAppear {
-                    BucketStore.load { result in
-                        switch result {
-                        case .failure(let error):
-                            print("fail list")
-                            fatalError(error.localizedDescription)
-                        case .success(let bucketI):
-                            print("success list")
-                            store.bucketI = bucketI
-                        }
+            .onAppear {
+                BucketStore.load { result in
+                    switch result {
+                    case .failure(let error):
+                        fatalError(error.localizedDescription)
+                    case .success(let bucketI):
+                        store.bucketI = bucketI
                     }
                 }
-                .tabItem() {
-                    Image("list.bullet")
-                    Text("BucketList")
-                }
+            }
+            .tabItem() {
+                Image("list.bullet")
+                Text("BucketList")
+            }
             
             ViewShop(shoplistitems: $storeI.shopI) {
                 ShopStore.save(shopI: storeI.shopI) { result in
@@ -59,25 +55,16 @@ struct Mainpage: View {
                 ShopStore.load { result in
                     switch result {
                     case .failure(let error):
-                        print("fail Shop")
                         fatalError(error.localizedDescription)
                     case .success(let shopI):
-                        print("success Shop")
                         storeI.shopI = shopI
                     }
                 }
             }
-                .tabItem() {
-                    Image("cart")
-                    Text("Shop")
-                }
+            .tabItem() {
+                Image("cart")
+                Text("Shop")
+            }
         }
     }
 }
-
-//struct Mainpage_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Mainpage().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-//    }
-//}
-//
