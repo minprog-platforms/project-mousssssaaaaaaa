@@ -84,10 +84,8 @@ struct ViewList: View {
 
                     }
                     .onChange(of: scenery_flag) { _ in
-                        print ("b")
                         saveAction()
-                        print ("c")
-                        }
+                    }
                 }
             }
         }

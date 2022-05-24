@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct ViewShop: View {
-    
-    @Environment(\.managedObjectContext) private var viewContext
-    
+
     // Load items
     @Binding var shoplistitems: [S_Item]
     @Environment(\.scenePhase) private var scenePhase
@@ -27,8 +25,8 @@ struct ViewShop: View {
     //New item in sheet
     @State var shop_itemMain: S_Item = S_Item(item: "", price: "")
     
-    // New item
-    @State var showingDetail = false
+    // save new item
+    @State private var scenery_flag = true
     
     var body: some View {
         
@@ -69,19 +67,22 @@ struct ViewShop: View {
                                             shoplistitems.append(shop_itemMain)
                                             shop_itemMain = S_Item(item: "", price: "")
                                             isPresentingNewTaskView = false
+                                            
+                                            // flip scenery flag
+                                            scenery_flag = scenery_flag == false
                                         }
                                     }
                                 }
                         }
                     }
+                    .onChange(of: scenery_flag) { _ in
+                        saveActionI()
+                    }
                 }
             }
         }
-        .onChange(of: scenePhase) { phase in
-            if phase == .inactive { saveActionI() }
-        }
-        }
     }
+}
 
 
 struct ViewShop_Previews: PreviewProvider {
