@@ -17,10 +17,10 @@ struct ViewList: View {
     @State private var scenery_flag = true
     let saveAction: ()->Void
     
-    // currency view
-    @State var currency = Currency()
+    // var currency
+    @State var currency = Currency_progress()
     
-    // Show when completed
+    // var for completion
     @State private var complete = false
 
     var body: some View {
@@ -42,11 +42,7 @@ struct ViewList: View {
                                 _ in saveAction()
                                 
                                 // Earn currency
-                                
-                                
-                                if (item.complete == true) {
-                                    currency.currency = currency.currency + (Int(item.reward) ?? 0) }
-                                else {  currency.currency = currency.currency}
+                                currency.currency_mut(complete: item.complete, reward: item.reward)
                             }
                         }
             }
@@ -70,7 +66,6 @@ struct ViewList: View {
                                             bucketlistitems.append(test_itemMain)
                                             test_itemMain = B_Item(task: "", reward: "", complete: false)
                                             isPresentingNewTaskView = false
-                                            print("a")
                                             
                                             // flip scenery flag
                                             scenery_flag = scenery_flag == false

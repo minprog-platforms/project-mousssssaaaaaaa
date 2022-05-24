@@ -7,8 +7,14 @@
 
 import SwiftUI
 
-struct Currency: Codable {
+struct Currency_progress: Codable {
     var currency = 0
+    
+    // Logic for earning currency
+    mutating func currency_mut(complete: Bool, reward: String) {
+        if (complete == true) {
+            currency = currency + (Int(reward) ?? 0) }
+    }
 }
 
 

@@ -19,9 +19,9 @@ struct ViewShop: View {
     let saveActionI: ()->Void
     
     // var for currency
-    @State var currency = Currency()
+    @State var currency = Currency_progress()
     
-    // Show when completed
+    // var for completion
     @State private var complete = false
     
     var body: some View {
