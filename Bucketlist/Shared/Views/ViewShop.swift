@@ -12,7 +12,6 @@ struct ViewShop: View {
     // var for items
     @Binding var shoplistitems: [S_Item]
 
-    
     // var for new item
     @State var new_shopitem: S_Item = S_Item(item: "", price: "")
     @State private var isPresentingNewTaskView = false

@@ -16,11 +16,13 @@ struct ViewList: View {
     @State var new_task: B_Item = B_Item(task: "", reward: "", complete: false)
     @State private var isPresentingNewTaskView = false
     @State private var scenery_flag = true
-    let saveAction: ()->Void
     
     // var currency
-    //@Binding var currency : [Currency_progress]
-    @State var currency = Currency_progress()
+    @Binding var currency: Currency_progress
+    //@State var currency = Currency_progress()
+    
+    let saveAction: ()->Void
+
     
     // var for completion
     @State private var complete = false
@@ -28,8 +30,6 @@ struct ViewList: View {
     var body: some View {
         
         NavigationView {
-            // shuffle bucketlist
-            //var regular_list = .shuffled()
             
             // show bucketlist items
             List ($bucketlistitems) { $item in
@@ -43,14 +43,15 @@ struct ViewList: View {
                         
                         Toggle("Complete", isOn: $item.complete)
                             .tint(.blue)
-                            .onChange(of: item.complete) {
-                                _ in saveAction()
+                            .onChange(of: item.complete) { _ in
                                 
                                 // earn currency
                                 currency.currency_mut(complete: item.complete, reward: item.reward)
                                 
                                 // flag to shuffle
                                 shuffle_flag = shuffle_flag == false
+                                
+                                saveAction()
                             }
                         }
             }
@@ -61,12 +62,12 @@ struct ViewList: View {
             
             .toolbar {
                 // display current currency
-                ToolbarItem(placement: .principal) {
-                    Text("Currency: \(currency.currency)").buttonStyle(.bordered)
+                ToolbarItem(placement: .confirmationAction) {
+                    Text("$ \(currency.currency)")
                 }
                 
                 // button/ menu for new item
-                ToolbarItem {
+                ToolbarItem (placement: .principal){
                     Button("Add new") {
                         isPresentingNewTaskView.toggle()
                     }
@@ -102,11 +103,5 @@ struct ViewList: View {
                 }
             }
         }
-    }
-}
-
-struct ViewList_Previews: PreviewProvider {
-    static var previews: some View {
-        ViewList(bucketlistitems: .constant(testData), saveAction: {})
     }
 }

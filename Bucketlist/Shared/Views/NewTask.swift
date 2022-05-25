@@ -41,10 +41,3 @@ struct NewTask: View {
         }
     }
 }
-            
-struct NewTaskPreview: PreviewProvider {
-    static var previews: some View {
-        ViewList(bucketlistitems: .constant(testData), saveAction: {})
-    }
-}
-    

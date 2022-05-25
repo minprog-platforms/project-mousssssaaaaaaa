@@ -8,8 +8,8 @@
 import SwiftUI
 
 class Progress_Store: ObservableObject {
-    @Published var cur: [Currency_progress] = []
-
+    @Published var cur: Currency_progress = Currency_progress(currency: 0)
+    
     private static func fileURL() throws -> URL {
         try FileManager.default.url(for: .documentDirectory,
                                        in: .userDomainMask,
@@ -18,17 +18,17 @@ class Progress_Store: ObservableObject {
         .appendingPathComponent("cur.data")
     }
 
-    static func load(completion: @escaping (Result<[Currency_progress], Error>)->Void) {
+    static func load(completion: @escaping (Result<Currency_progress, Error>)->Void) {
         DispatchQueue.global(qos: .background).async {
             do {
                 let fileURL = try fileURL()
                 guard let file = try? FileHandle(forReadingFrom: fileURL) else {
                     DispatchQueue.main.async {
-                        completion(.success([]))
+                        completion(.success(Currency_progress(currency: 0)))
                     }
                     return
                 }
-                let Currency = try JSONDecoder().decode([Currency_progress].self, from: file.availableData)
+                let Currency = try JSONDecoder().decode(Currency_progress.self, from: file.availableData)
                 DispatchQueue.main.async {
                     completion(.success(Currency))
                 }
@@ -39,14 +39,14 @@ class Progress_Store: ObservableObject {
             }
         }
     }
-        static func save(cur: [Currency_progress], completion: @escaping (Result<Int, Error>)->Void) {
+        static func save(cur: Currency_progress, completion: @escaping (Result<Int, Error>)->Void) {
             DispatchQueue.global(qos: .background).async {
                 do {
                     let data = try JSONEncoder().encode(cur)
                     let outfile = try fileURL()
                     try data.write(to: outfile)
                     DispatchQueue.main.async {
-                        completion(.success(cur.count))
+                        completion(.success(1))
                     }
                 } catch {
                     DispatchQueue.main.async {
