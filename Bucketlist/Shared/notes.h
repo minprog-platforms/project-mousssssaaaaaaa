@@ -14,12 +14,15 @@
 // Logic
 
 
-- randomize results:
-shuffle() when completed????
 
 
 - Fix currency persistence
 kan ik logica currency en persistent waarden via een struct laten lopen?
+
+
+
+- randomize results:
+shuffle() with prefix 5?
 
 
 TODO

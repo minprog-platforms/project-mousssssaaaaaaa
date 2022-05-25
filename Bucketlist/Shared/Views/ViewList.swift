@@ -29,10 +29,10 @@ struct ViewList: View {
         
         NavigationView {
             // shuffle bucketlist
-            let regular_list = $bucketlistitems.shuffled()
+            //var regular_list = .shuffled()
             
             // show bucketlist items
-            List (regular_list.prefix(5)) { $item in
+            List ($bucketlistitems) { $item in
                     VStack(alignment: .leading){
                         Color (.blue)
                         Text(item.task)
@@ -51,16 +51,13 @@ struct ViewList: View {
                                 
                                 // flag to shuffle
                                 shuffle_flag = shuffle_flag == false
-                                
-                                // shuffle list??????????????????????????????????
-                                // regular_list = $bucketlistitems.shuffled()
                             }
                         }
             }
-//           shufffle outside of sheet
-//        .onChange(of: shuffle_flag) { _ in
-//                regular_list = $bucketlistitems.shuffled
-//            }
+            // shufffle outside of sheet
+            .onChange(of: shuffle_flag) { _ in
+                    bucketlistitems = bucketlistitems.shuffled()
+                }
             
             .toolbar {
                 // display current currency
