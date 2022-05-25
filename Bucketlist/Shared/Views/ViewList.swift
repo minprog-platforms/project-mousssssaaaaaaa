@@ -10,6 +10,7 @@ struct ViewList: View {
     
     // var for items
     @Binding var bucketlistitems: [B_Item]
+    @State private var shuffle_flag = true
 
     // Var for New item
     @State var new_task: B_Item = B_Item(task: "", reward: "", complete: false)
@@ -27,10 +28,11 @@ struct ViewList: View {
     var body: some View {
         
         NavigationView {
-            let regular_list = $bucketlistitems //*var
+            // shuffle bucketlist
+            let regular_list = $bucketlistitems.shuffled()
             
             // show bucketlist items
-            List (regular_list) { $item in
+            List (regular_list.prefix(5)) { $item in
                     VStack(alignment: .leading){
                         Color (.blue)
                         Text(item.task)
@@ -47,11 +49,19 @@ struct ViewList: View {
                                 // earn currency
                                 currency.currency_mut(complete: item.complete, reward: item.reward)
                                 
+                                // flag to shuffle
+                                shuffle_flag = shuffle_flag == false
+                                
                                 // shuffle list??????????????????????????????????
                                 // regular_list = $bucketlistitems.shuffled()
                             }
                         }
             }
+//           shufffle outside of sheet
+//        .onChange(of: shuffle_flag) { _ in
+//                regular_list = $bucketlistitems.shuffled
+//            }
+            
             .toolbar {
                 // display current currency
                 ToolbarItem(placement: .principal) {
