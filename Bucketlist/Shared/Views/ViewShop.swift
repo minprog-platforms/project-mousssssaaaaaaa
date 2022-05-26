@@ -16,13 +16,15 @@ struct ViewShop: View {
     @State var new_shopitem: S_Item = S_Item(item: "", price: "")
     @State private var isPresentingNewTaskView = false
     @State private var scenery_flag = true
-    let saveActionI: ()->Void
     
-    // var for currency
-    @State var currency = Currency_progress()
+    // var currency
+    @Binding var currency: Currency_progress
     
     // var for completion
     @State private var complete = false
+    
+    // var save
+    let saveActionI: ()->Void
     
     var body: some View {
         
@@ -39,19 +41,23 @@ struct ViewShop: View {
                     //Color.blue
                     Button("Buy!") {
                         // decrease currency with price
+                        currency.currency_spending(price: item.price)
+                        
+                        // save reward bought
+                        saveActionI()
                         }
                     }
             }
 
             .toolbar {
                 // display current currency
-                ToolbarItem(placement: .principal) {
-                    Text("Currency: \(currency.currency)")
+                ToolbarItem(placement: .confirmationAction) {
+                    Text("$ \(currency.currency)")
                 }
                 
-                // Button for new item
-                ToolbarItem {
-                    Button("Add new") {
+                // button/ menu for new item
+                ToolbarItem (placement: .principal){
+                    Button("Add reward") {
                         isPresentingNewTaskView.toggle()
                     }
                     .sheet(isPresented: $isPresentingNewTaskView) {
@@ -62,7 +68,7 @@ struct ViewShop: View {
                                 ToolbarItem(placement: .confirmationAction) {
                                     Button("Close") {
                                         
-//                                        // add items with descriptions
+                                        // add items with descriptions
                                         if (new_shopitem.item != "") {
                                             shoplistitems.append(new_shopitem)
                                         }
@@ -88,12 +94,3 @@ struct ViewShop: View {
         }
     }
 }
-
-
-struct ViewShop_Previews: PreviewProvider {
-    static var previews: some View {
-        ViewShop(shoplistitems: .constant(testData_S), saveActionI: {})
-    }
-}
-
-

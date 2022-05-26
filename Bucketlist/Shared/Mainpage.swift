@@ -53,8 +53,13 @@ struct Mainpage: View {
                 Text("BucketList")
             }
             
-            ViewShop(shoplistitems: $storeI.shopI) {
+            ViewShop(shoplistitems: $storeI.shopI, currency: $curr_store.cur) {
                 ShopStore.save(shopI: storeI.shopI) { result in
+                    if case .failure(let error) = result {
+                        fatalError(error.localizedDescription)
+                    }
+                }
+                Progress_Store.save(cur: curr_store.cur) { result in
                     if case .failure(let error) = result {
                         fatalError(error.localizedDescription)
                     }
@@ -67,6 +72,14 @@ struct Mainpage: View {
                         fatalError(error.localizedDescription)
                     case .success(let shopI):
                         storeI.shopI = shopI
+                    }
+                }
+                Progress_Store.load { result in
+                    switch result {
+                    case .failure(let error):
+                        fatalError(error.localizedDescription)
+                    case .success(let cur):
+                        curr_store.cur = cur
                     }
                 }
             }

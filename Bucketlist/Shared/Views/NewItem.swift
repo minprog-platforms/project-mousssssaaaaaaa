@@ -39,9 +39,9 @@ struct NewItem: View {
     }
 }
             
-struct NewItemPreview: PreviewProvider {
-    static var previews: some View {
-        ViewShop(shoplistitems: .constant(testData_S), saveActionI: {})
-    }
-}
- 
+//struct NewItemPreview: PreviewProvider {
+//    static var previews: some View {
+//        ViewShop(shoplistitems: .constant(testData_S), saveActionI: {})
+//    }
+//}
+// 

@@ -19,8 +19,8 @@ struct ViewList: View {
     
     // var currency
     @Binding var currency: Currency_progress
-    //@State var currency = Currency_progress()
-    
+
+    // var save
     let saveAction: ()->Void
 
     
@@ -68,7 +68,7 @@ struct ViewList: View {
                 
                 // button/ menu for new item
                 ToolbarItem (placement: .principal){
-                    Button("Add new") {
+                    Button("Add task") {
                         isPresentingNewTaskView.toggle()
                     }
                     .sheet(isPresented: $isPresentingNewTaskView) {
