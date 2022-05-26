@@ -29,7 +29,7 @@ struct NewTask: View {
                 Text("Description")
                 TextField("", text: $task)
                 
-                Text("Reward")
+                Text("$")
                 TextField("",text: $reward)
                 
                 

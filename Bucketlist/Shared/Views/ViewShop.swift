@@ -33,19 +33,24 @@ struct ViewShop: View {
             List ($shoplistitems) { $item in
                 VStack(alignment: .leading){
                     Color (.blue)
-                    Text(item.item)
-                        .bold()
-                    Text("Reward: \(item.price)")
+                    Text("$ \(item.price)")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                    
+                    Text(item.item)
+                        .bold()
+                        .font(.title)
+
                     //Color.blue
-                    Button("Buy!") {
+                    Button("Buy") {
                         // decrease currency with price
                         currency.currency_spending(price: item.price)
                         
                         // save reward bought
                         saveActionI()
                         }
+                        .frame(maxWidth: .infinity, alignment: .trailing)
                     }
             }
 

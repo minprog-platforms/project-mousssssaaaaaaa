@@ -23,7 +23,6 @@ struct ViewList: View {
     // var save
     let saveAction: ()->Void
 
-    
     // var for completion
     @State private var complete = false
 
@@ -35,12 +34,15 @@ struct ViewList: View {
             List ($bucketlistitems) { $item in
                     VStack(alignment: .leading){
                         Color (.blue)
-                        Text(item.task)
-                            .bold()
-                        Text("Reward: \(item.reward)")
+                        Text("$ \(item.reward)")
                             .font(.subheadline)
                             .foregroundColor(.secondary)
+                            .frame(maxWidth: .infinity, alignment: .trailing)
                         
+                        Text(item.task)
+                            .bold()
+                            .font(.title)
+
                         Toggle("Complete", isOn: $item.complete)
                             .tint(.blue)
                             .onChange(of: item.complete) { _ in
@@ -50,6 +52,11 @@ struct ViewList: View {
                                 
                                 // flag to shuffle
                                 shuffle_flag = shuffle_flag == false
+                                
+                                // add task to achievements/ delete item
+                                
+                                
+                                
                                 
                                 saveAction()
                             }

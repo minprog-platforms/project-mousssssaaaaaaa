@@ -18,6 +18,7 @@ struct Mainpage: View {
     var body: some View {
 
         TabView {
+
             ViewList(bucketlistitems: $store.bucketI, currency: $curr_store.cur) {
                 BucketStore.save(bucketI: store.bucketI) { result in
                     if case .failure(let error) = result {
@@ -86,6 +87,12 @@ struct Mainpage: View {
             .tabItem() {
                 Image("cart")
                 Text("Shop")
+            }
+            
+            ViewTrophies()
+            .tabItem() {
+                Image("check")
+                Text("Achievements")
             }
         }
     }

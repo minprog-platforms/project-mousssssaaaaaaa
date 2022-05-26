@@ -26,7 +26,7 @@ struct NewItem: View {
                 Text("Description")
                 TextField("", text: $item)
                 
-                Text("Price")
+                Text("$")
                 TextField("",text: $price)
                 
                 
