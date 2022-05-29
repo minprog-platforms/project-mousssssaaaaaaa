@@ -40,8 +40,6 @@ struct ViewList: View {
                             .frame(maxWidth: .infinity, alignment: .trailing)
                         
                         Text(item.task)
-                            .bold()
-                            .font(.title)
 
                         Toggle("Complete", isOn: $item.complete)
                             .tint(.blue)
@@ -53,10 +51,13 @@ struct ViewList: View {
                                 // flag to shuffle
                                 shuffle_flag = shuffle_flag == false
                                 
-                                // add task to achievements/ delete item
+                                // add task to achievements/
                                 
                                 
                                 
+                                //delete item
+                                let index = bucketlistitems.firstIndex(where: {$0.task == item.task})
+                                bucketlistitems.remove(at: Int(index!))
                                 
                                 saveAction()
                             }
@@ -65,6 +66,7 @@ struct ViewList: View {
             // shufffle outside of sheet
             .onChange(of: shuffle_flag) { _ in
                     bucketlistitems = bucketlistitems.shuffled()
+                    print("shuffled")
                 }
             
             .toolbar {
@@ -109,6 +111,8 @@ struct ViewList: View {
                     }
                 }
             }
+            
+            
         }
     }
 }

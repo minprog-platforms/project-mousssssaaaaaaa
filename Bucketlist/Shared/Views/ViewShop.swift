@@ -39,8 +39,6 @@ struct ViewShop: View {
                         .frame(maxWidth: .infinity, alignment: .trailing)
                     
                     Text(item.item)
-                        .bold()
-                        .font(.title)
 
                     //Color.blue
                     Button("Buy") {
