@@ -51,11 +51,11 @@ struct ViewList: View {
                                 // flag to shuffle
                                 shuffle_flag = shuffle_flag == false
                                 
-                                // add task to achievements/
+                                // add completed task to achievements
                                 
                                 
                                 
-                                //delete item
+                                //remove completed task from bucketlist
                                 let index = bucketlistitems.firstIndex(where: {$0.task == item.task})
                                 bucketlistitems.remove(at: Int(index!))
                                 
