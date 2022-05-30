@@ -9,13 +9,20 @@ import SwiftUI
 
 struct ViewTrophies: View {
     
-    var trophies: [A_Item] = []
+    // var for items
+    @Binding var trophies: [A_Item]
+    
+    // var save
+    let saveAction: ()->Void
     
     var body: some View {
-//        List(A_Item) { award in
-            Text("Trophies")
-//        }
+        Form {
+            Section(header: Text("Trophy list").font(.title).foregroundColor(.blue)) {
+                List($trophies) { $trophy in
+                    Text("\(trophy.task)")
+                }
+            }
+        }
     }
-
 }
 

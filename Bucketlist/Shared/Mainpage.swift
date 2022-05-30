@@ -14,13 +14,14 @@ struct Mainpage: View {
     @StateObject private var store = BucketStore()
     @StateObject private var storeI = ShopStore()
     @StateObject private var curr_store = Progress_Store()
+    @StateObject private var trophies = AchievedStore()
 
     var body: some View {
 
         TabView {
-
-            ViewList(bucketlistitems: $store.bucketI, currency: $curr_store.cur) {
-                BucketStore.save(bucketI: store.bucketI) { result in
+            ViewList(bucketlistitems: $store.bucketI, currency: $curr_store.cur, trophies: $trophies.trophy) {
+                BucketStore.save(bucketI: store.bucketI)
+                { result in
                     if case .failure(let error) = result {
                         fatalError(error.localizedDescription)
                     }
@@ -29,7 +30,12 @@ struct Mainpage: View {
                     if case .failure(let error) = result {
                         fatalError(error.localizedDescription)
                     }
-                } 
+                }
+                AchievedStore.save(trophy: trophies.trophy) { result in
+                    if case .failure(let error) = result {
+                        fatalError(error.localizedDescription)
+                    }
+                }
             }
             .onAppear {
                 BucketStore.load { result in
@@ -88,8 +94,24 @@ struct Mainpage: View {
                 Image("cart")
                 Text("Shop")
             }
-            
-            ViewTrophies()
+
+            ViewTrophies(trophies: $trophies.trophy) {
+                AchievedStore.save(trophy: trophies.trophy) { result in
+                    if case .failure(let error) = result {
+                        fatalError(error.localizedDescription)
+                    }
+                }
+            }
+            .onAppear {
+                AchievedStore.load { result in
+                    switch result {
+                    case .failure(let error):
+                        fatalError(error.localizedDescription)
+                    case .success(let trophy):
+                        trophies.trophy = trophy
+                    }
+                }
+            }
             .tabItem() {
                 Image("check")
                 Text("Achievements")

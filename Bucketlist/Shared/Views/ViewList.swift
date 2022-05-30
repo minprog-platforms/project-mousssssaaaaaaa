@@ -20,11 +20,13 @@ struct ViewList: View {
     // var currency
     @Binding var currency: Currency_progress
 
-    // var save
-    let saveAction: ()->Void
-
     // var for completion
     @State private var complete = false
+    @State var task_V: A_Item = A_Item(task: "")
+    @Binding var trophies: [A_Item]
+    
+    // var save
+    let saveAction: ()->Void
 
     var body: some View {
         
@@ -52,12 +54,15 @@ struct ViewList: View {
                                 shuffle_flag = shuffle_flag == false
                                 
                                 // add completed task to achievements
-                                
-                                
+                                task_V.task = item.task
+                                trophies.append(task_V)
                                 
                                 //remove completed task from bucketlist
                                 let index = bucketlistitems.firstIndex(where: {$0.task == item.task})
                                 bucketlistitems.remove(at: Int(index!))
+                                
+                                // reset placeholder
+                                task_V = A_Item(task: "")
                                 
                                 saveAction()
                             }
@@ -95,7 +100,7 @@ struct ViewList: View {
                                         
                                         // reset placeholder
                                         new_task = B_Item(task: "", reward: "", complete: false)
-                                        
+                                
                                         // flip scenery flag
                                         scenery_flag = scenery_flag == false
                                         

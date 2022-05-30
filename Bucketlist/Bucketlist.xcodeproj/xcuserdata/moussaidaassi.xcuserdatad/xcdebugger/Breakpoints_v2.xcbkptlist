@@ -8,14 +8,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "377B8AC7-63DB-45B9-85C9-4638EC5B9E02"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shared/Mainpage.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "Shared/Views/ViewList.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
