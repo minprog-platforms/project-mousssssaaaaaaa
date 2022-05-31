@@ -4,10 +4,11 @@ project-mousssssaaaaaaa created by GitHub Classroom by Moussa Idaassi
 # Bucketlist
 
 ## screenshots
-![Bucketlist](https://user-images.githubusercontent.com/65379947/171280911-41468079-79dd-4592-a119-075462341e7e.PNG)
+![Bucketlist](https://user-images.githubusercontent.com/65379947/171281142-b891e3f4-88b0-40a8-8d1b-9eb92879cf9a.PNG)
+![RewardStore](https://user-images.githubusercontent.com/65379947/171281148-960e2f2e-efc5-450f-823e-dde3384b72ae.PNG)
 
 
-![RewardStore](https://user-images.githubusercontent.com/65379947/171276941-985a589a-102c-4b42-873e-d23041b3269b.PNG)
+
 
 ## description of the app’s purpose
 
@@ -19,8 +20,8 @@ But the drawback of having a large static list remains that it is only pops up i
 This results in me and probably other people with a bucket list having a ever growing list of ideas on there bucket list.
 
 ## Solution sketch
-![Homescreen](/doc/homescreen.png)
 ![Adding new items](/doc/additionals.png)
+![Homescreen](/doc/homescreen.png)
 
 ###### Summary
 This application will hopefully make the user more exicted to interact with his or her bucketlist. The user will receive new goals from time to time to be completed for a reward choosen by the user. 
