@@ -51,3 +51,11 @@ It might be difficult create a right loop of adding a goal to list which will th
 ## Acknowledgements
 #### iOS App Dev Tutorials - Persisting Data
 https://developer.apple.com/tutorials/app-dev-training/persisting-data
+
+#### Giovanni Monaco - Passing Data between Views in SwiftUI using @State and @Binding
+https://www.createwithswift.com/tutorial-passing-data-between-views-in-swiftui-using-state-and-binding/
+
+#### Paul Hudson - How to present a new view using sheets
+https://www.hackingwithswift.com/quick-start/swiftui/how-to-present-a-new-view-using-sheets
+
+
