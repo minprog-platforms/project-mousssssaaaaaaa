@@ -4,10 +4,13 @@ project-mousssssaaaaaaa created by GitHub Classroom by Moussa Idaassi
 # Bucketlist
 
 ## screenshots
+![Bucketlist](https://user-images.githubusercontent.com/65379947/171280911-41468079-79dd-4592-a119-075462341e7e.PNG)
+
+
+![RewardStore](https://user-images.githubusercontent.com/65379947/171276941-985a589a-102c-4b42-873e-d23041b3269b.PNG)
 
 ## description of the app’s purpose
-![Bucketlist](https://user-images.githubusercontent.com/65379947/171276926-184a0b00-06ef-4a48-bb94-cb74ecd5971c.PNG)
-![RewardStore](https://user-images.githubusercontent.com/65379947/171276941-985a589a-102c-4b42-873e-d23041b3269b.PNG)
+
 
 ## Problem statement
 Personally I often find myself coming up with new ideas without following them up.
