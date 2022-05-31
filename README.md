@@ -4,7 +4,7 @@ project-mousssssaaaaaaa created by GitHub Classroom by Moussa Idaassi
 # Bucketlist
 
 ## screenshots
-![Bucketlist](https://user-images.githubusercontent.com/65379947/171281142-b891e3f4-88b0-40a8-8d1b-9eb92879cf9a.PNG)
+![Bucketlist](https://user-images.githubusercontent.com/65379947/171281314-2fdacd22-4568-406c-92f7-81939b957f80.PNG)
 ![RewardStore](https://user-images.githubusercontent.com/65379947/171281148-960e2f2e-efc5-450f-823e-dde3384b72ae.PNG)
 
 
