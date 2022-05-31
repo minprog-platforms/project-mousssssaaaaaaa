@@ -1,12 +1,12 @@
-## highlights
+### highlights
 
-- leesbaarheid code
+## leesbaarheid code
 Persoonlijk ben ik redelijk tevreden over de leesbaarheid van mijn code omdat ik een groot deel heb kunnen groeperen en orderen in en eigen file/ afscheding. Bij regel 53 tot 65 van mijn ViewList had de logica ook in andere file gekund, hiervoor heb ik echter niet gekozen omdat de afsplitsing van deze taakjes (met ieder eigen variabelen) de leesbaarheid niet ten goede zou komen.
 
-- gebruikersgemak 
+## gebruikersgemak 
 Bij het ontwerp heb ik gekozen voor een tabbar focus omdat dit voor de meeste gebruikers intuïtief zal aanvoelen (zoals bij whatsapp, spotify en andere bekende apps). Daarnaast maak ik gebruik van veelvuldige gebruikte steekworden (add, submit, close and shop) om direct de bedoelingen van de app zichtbaar te maken.  
 
-- documentatie 
+## documentatie 
 Het 
 
 
