@@ -6,11 +6,19 @@ Persoonlijk ben ik redelijk tevreden over de leesbaarheid van mijn code omdat ik
 ## Gebruikersgemak 
 Bij het ontwerp heb ik gekozen voor een tabbar focus omdat dit voor de meeste gebruikers intuïtief zal aanvoelen (zoals bij whatsapp, spotify en andere bekende apps). Daarnaast maak ik gebruik van veelvuldige gebruikte steekworden (add, submit, close and shop) om direct de bedoelingen van de app zichtbaar te maken.  
 
+## Mechanisme 
+In eerste instantie had ik veel moeite met het verbinden van variabelen in views en permanent vastleggen van data. Door dit mechanisme hierachter uiteindelijk te begrijpen boodt dit mij de kans om naast een muntjesmechanisme ook een troffeemechanisme te implementeren, hierdoor heeft de gebruiker nog meer prikkels om taakjes uit te voeren.
+
 ## Documentatie 
-Voor dit project heb ik geregeld commits uitgevoerd met de juiste beschrijving waardoor mijn progressie en hindernissen eenvoudig terug te vinden zijn.  
+Voor dit project heb ik geregeld commits uitgevoerd met een korte beschrijving waardoor mijn progressie en bugs eenvoudig terug te vinden zijn.   
 
+### decisions
 
-## Repository en documentatie — In hoeverre is de repository compleet en netjes en in hoeverre is het project goed gedocumenteerd? We kijken naar het gebruik van de repository én van GitHub zoals dit bedoeld is. Te denken valt aan de indeling van de repository, de vindbaarheid van documentatie en onderdelen van de code, maar ook naar de regelmaat van committen en pushen, en het netjes afvinken van “issues” op GitHub. Een groot probleem is het “opnieuw beginnen” van een repository. Dit moet ten allen tijde worden voorkomen. We kijken ook naar de algemene beschrijving van het project in de README.md, de screencast en de beschrijving van de voortgang in PROCESS.md. Te denken valt aan duidelijk geschreven teksten en nette diagrammen, expliciete links naar belangrijke onderdelen van de code en het up-to-date zijn met het daadwerkelijke eindproduct.
+## Geen delete optie 
+Bij het aanmaken van mijn lijst heb ik lang getwijfeld om een verwijder of wijzig optie te introduceren voor de lijstjes. Hiervoor heb ik niet gekozen omdat ik de gebruiker verantwoordelijk wil houden en wil voorkomen dat dingen worden verwijdert of aangepast omdat de uitvoering te lastig blijkt te zijn. Dit kan soms frustreren zijn maar is uiteindelijk in lijn met de hoofddoel van mijn app, om de gebruiker te inspireren om de bucketlist te voltooien. 
 
-## decisions
-Geen delete optie 
+## Dynamiek
+Oorspronkelijk wou ik de bucketlist via periodieke taakjes aan de gebruiker laten zien. Nadat ik dit in praktijk probeerde te testen bleek dit voor de voor mij als gebruiker te rigide. Inplaats daarvan koos ik voor een systeem waarbij de lijst bij ieder voltooide taak wordt geschud. Het idee hierachter is dat de gebruiker gemotiveerd is om een taak te volbrengen wetend dat de nieuwe taak bovin zal verschijnen. 
+
+*de studiewijzer was in het Nederlands vandaar de Nederlandse assesment
+
