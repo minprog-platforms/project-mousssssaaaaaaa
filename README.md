@@ -1,7 +1,13 @@
 # proposal- Bucketlist - mousssssaaaaaaa
-project-mousssssaaaaaaa created by GitHub Classroom
+project-mousssssaaaaaaa created by GitHub Classroom by Moussa Idaassi
 
 # Bucketlist
+
+## screenshots
+
+## description of the app’s purpose
+![Bucketlist](https://user-images.githubusercontent.com/65379947/171276926-184a0b00-06ef-4a48-bb94-cb74ecd5971c.PNG)
+![RewardStore](https://user-images.githubusercontent.com/65379947/171276941-985a589a-102c-4b42-873e-d23041b3269b.PNG)
 
 ## Problem statement
 Personally I often find myself coming up with new ideas without following them up.
@@ -11,7 +17,7 @@ This results in me and probably other people with a bucket list having a ever gr
 
 ## Solution sketch
 ![Homescreen](/doc/homescreen.png)
-![Homescreen](/doc/additionals.png)
+![Adding new items](/doc/additionals.png)
 
 ###### Summary
 This application will hopefully make the user more exicted to interact with his or her bucketlist. The user will receive new goals from time to time to be completed for a reward choosen by the user. 
