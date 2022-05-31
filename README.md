@@ -3,15 +3,12 @@ project-mousssssaaaaaaa created by GitHub Classroom by Moussa Idaassi
 
 # Bucketlist
 
+## description of the app’s purpose
+The bucketlist-app encourages the user to check off activities from their bucketlist. The app tries to achieve this by randomizing the list after completing a task, having rewards as an incentive and having a trophy collection. 
+
 ## screenshots
 ![Bucketlist](https://user-images.githubusercontent.com/65379947/171281314-2fdacd22-4568-406c-92f7-81939b957f80.PNG)
 ![RewardStore](https://user-images.githubusercontent.com/65379947/171281148-960e2f2e-efc5-450f-823e-dde3384b72ae.PNG)
-
-
-
-
-## description of the app’s purpose
-
 
 ## Problem statement
 Personally I often find myself coming up with new ideas without following them up.
