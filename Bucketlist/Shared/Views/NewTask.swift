@@ -32,12 +32,11 @@ struct NewTask: View {
                 Text("$")
                 TextField("",text: $reward)
                 
-                
                 Button("Submit") {
                     test_item.task = task
                     test_item.reward = reward                    
                 }
-        }
+            }
         }
     }
 }

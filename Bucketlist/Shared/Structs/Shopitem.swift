@@ -12,9 +12,3 @@ struct S_Item: Identifiable, Codable {
     var item: String
     var price: String
 }
-
-let testData_S = [
-    S_Item(item: "Buy a videogame", price:"50"),
-    S_Item(item: "Go on a fancy dinner", price: "20")
-]
-

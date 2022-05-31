@@ -67,7 +67,6 @@
 		6E7B1E3D28400F7F0067763C /* Achieved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achieved.swift; sourceTree = "<group>"; };
 		6E989B48283B8A6F00A6D84D /* Shopstore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopstore.swift; sourceTree = "<group>"; };
 		6E989B4A283BB59800A6D84D /* Progress_store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress_store.swift; sourceTree = "<group>"; };
-		6EF5B14E281C021F000140CF /* notes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = notes.h; sourceTree = "<group>"; };
 		6EF5B14F281C0641000140CF /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		6EFE7C192817CC860062DB46 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		6EFE7C1A2817CC860062DB46 /* BucketlistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketlistApp.swift; sourceTree = "<group>"; };
@@ -155,7 +154,6 @@
 		6EFE7C172817CC860062DB46 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				6EF5B14E281C021F000140CF /* notes.h */,
 				6EFE7C1A2817CC860062DB46 /* BucketlistApp.swift */,
 				6EFE7C1B2817CC860062DB46 /* Mainpage.swift */,
 				6E57534A2844E546007F27D1 /* Structs */,
@@ -560,6 +558,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6G5LP39KJR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bucketlist--iOS--Info.plist";
@@ -591,6 +590,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6G5LP39KJR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bucketlist--iOS--Info.plist";

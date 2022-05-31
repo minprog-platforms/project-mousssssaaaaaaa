@@ -66,13 +66,13 @@ struct ViewList: View {
                                 
                                 saveAction()
                             }
-                        }
+                    }
             }
             // shufffle outside of sheet
             .onChange(of: shuffle_flag) { _ in
-                    bucketlistitems = bucketlistitems.shuffled()
-                    print("shuffled")
-                }
+                bucketlistitems = bucketlistitems.shuffled()
+                print("shuffled")
+            }
             
             .toolbar {
                 // display current currency
@@ -81,7 +81,7 @@ struct ViewList: View {
                 }
                 
                 // button/ menu for new item
-                ToolbarItem (placement: .principal){
+                ToolbarItem (placement: .principal) {
                     Button("Add task") {
                         isPresentingNewTaskView.toggle()
                     }
@@ -116,8 +116,6 @@ struct ViewList: View {
                     }
                 }
             }
-            
-            
         }
     }
 }

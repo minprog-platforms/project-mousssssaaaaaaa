@@ -47,9 +47,9 @@ struct ViewShop: View {
                         
                         // save reward bought
                         saveActionI()
-                        }
-                        .frame(maxWidth: .infinity, alignment: .trailing)
                     }
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                }
             }
 
             .toolbar {
@@ -59,7 +59,7 @@ struct ViewShop: View {
                 }
                 
                 // button/ menu for new item
-                ToolbarItem (placement: .principal){
+                ToolbarItem (placement: .principal) {
                     Button("Add reward") {
                         isPresentingNewTaskView.toggle()
                     }

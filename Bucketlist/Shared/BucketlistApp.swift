@@ -9,12 +9,10 @@ import SwiftUI
 
 @main
 struct BucketlistApp: App {
-    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
             Mainpage()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

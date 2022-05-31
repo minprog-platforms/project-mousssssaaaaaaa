@@ -18,5 +18,6 @@ struct Currency_progress: Codable {
         
     // logic for buying item
     mutating func currency_spending (price: String) {
-        currency = currency - (Int(price) ?? 0) }
+        currency = currency - (Int(price) ?? 0)
+    }
 }

@@ -34,14 +34,7 @@ struct NewItem: View {
                     test_item.item = item
                     test_item.price = price
                 }
-        }
+            }
         }
     }
 }
-            
-//struct NewItemPreview: PreviewProvider {
-//    static var previews: some View {
-//        ViewShop(shoplistitems: .constant(testData_S), saveActionI: {})
-//    }
-//}
-// 

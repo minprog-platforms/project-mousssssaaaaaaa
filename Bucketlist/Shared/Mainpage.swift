@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct Mainpage: View {
     
@@ -20,8 +19,7 @@ struct Mainpage: View {
 
         TabView {
             ViewList(bucketlistitems: $store.bucketI, currency: $curr_store.cur, trophies: $trophies.trophy) {
-                BucketStore.save(bucketI: store.bucketI)
-                { result in
+                BucketStore.save(bucketI: store.bucketI) { result in
                     if case .failure(let error) = result {
                         fatalError(error.localizedDescription)
                     }
