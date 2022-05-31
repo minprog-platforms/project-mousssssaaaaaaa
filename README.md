@@ -48,4 +48,6 @@ This andriod app has the same concept but uses a static list without rewards. Th
 ###### Hardest parts 
 It might be difficult create a right loop of adding a goal to list which will then create a randomized task list. Another obstacle could be that the user would have to enter a lot of goals and items before the randomized generator will offer interesting options. I also assume that to balance the 'game' aspect of having goals that are challenging and reachable when the user decides the reward and the price.
 
-
+## Acknowledgements
+#### iOS App Dev Tutorials - Persisting Data
+https://developer.apple.com/tutorials/app-dev-training/persisting-data
