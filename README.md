@@ -7,6 +7,9 @@ The bucketlist-app encourages the user to check off activities from their bucket
 ![Bucketlist](https://user-images.githubusercontent.com/65379947/171281314-2fdacd22-4568-406c-92f7-81939b957f80.PNG)
 ![RewardStore](https://user-images.githubusercontent.com/65379947/171281148-960e2f2e-efc5-450f-823e-dde3384b72ae.PNG)
 
+
+https://www.youtube.com/watch?v=YmfIoVSqwx4&ab_channel=MoussaIdaassi 
+
 ## Problem statement
 Personally I often find myself coming up with new ideas without following them up.
 Writing these ideas down in a bucket list helps keep track of these ideas. 
