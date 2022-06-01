@@ -8,7 +8,9 @@ The bucketlist-app encourages the user to check off activities from their bucket
 ![RewardStore](https://user-images.githubusercontent.com/65379947/171281148-960e2f2e-efc5-450f-823e-dde3384b72ae.PNG)
 
 
-https://www.youtube.com/watch?v=YmfIoVSqwx4&ab_channel=MoussaIdaassi 
+## Screencast
+https://user-images.githubusercontent.com/65379947/171493007-07c9add9-57fd-4af3-987c-6b76a152aea9.mov
+link: https://www.youtube.com/watch?v=YmfIoVSqwx4&ab_channel=MoussaIdaassi 
 
 ## Problem statement
 Personally I often find myself coming up with new ideas without following them up.
